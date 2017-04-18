@@ -1,33 +1,28 @@
-﻿using System;
+﻿using DandD.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DandD.Models.Game_Files
 {
-    public class Battlefield
+    public class Battlefield : BaseDataObject
     {
-        Character c1;
-        Monster m1;
+        int attack;
+        BattlefieldController field;
 
         public Battlefield()
         {
             
         }
 
-        public int attack(Object obj)
+        public int Attack
         {
-            int damage = 0;
-            
-            if(obj == m1)
-            {
-                damage = 10;
-            } else
-            {
-                damage = 10;
-            }
-
-            return damage;
+            get { return attack; }
+            set { SetProperty(ref attack, value); }
         }
+
         
+
+
     }
 }

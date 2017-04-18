@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DandD.Models.Game_Files;
+using DandD.Services;
 
 namespace UnitTestProject1
 {
@@ -15,10 +16,24 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void chracterCreationTest()
+        {
+            Character m1 = new Character("Benson");
+            Assert.AreEqual("Benson", m1.Name);
+        }
+
+        [TestMethod]
         public void monsterIsDeadTest()
         {
             Monster m1 = new Monster("slime");
             Assert.AreEqual(true, m1.isDead(0));
+        }
+
+        [TestMethod]
+        public void characterIsDeadTest()
+        {
+            Character c1 = new Character("Benson");
+            Assert.AreEqual(true, c1.isDead(0));
         }
 
         [TestMethod]
@@ -48,5 +63,7 @@ namespace UnitTestProject1
             Assert.AreEqual(c1.Health, m1.Health);
 
         }
+
+        
     }
 }
