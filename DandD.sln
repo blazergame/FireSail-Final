@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTes
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DandD\DandD\DandD.projitems*{24bcff16-f7c0-4661-a6ea-14703258f5a2}*SharedItemsImports = 4
 		DandD\DandD\DandD.projitems*{94f3c29a-dba1-435c-a44a-76782ea6c001}*SharedItemsImports = 13
 		DandD\DandD\DandD.projitems*{c3750079-d345-47ea-b9d5-5194458f83b1}*SharedItemsImports = 4
 	EndGlobalSection

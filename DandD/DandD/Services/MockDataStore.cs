@@ -76,14 +76,14 @@ namespace DandD.Services
 				return;
 
 			items = new List<Item>();
-			var _items = new List<Item>
-			{
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Buy some cat food", Description="The cats are hungry"},
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Learn F#", Description="Seems like a functional idea"},
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Learn to play guitar", Description="Noted"},
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Buy some new candles", Description="Pine and cranberry for that winter feel"},
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Complete holiday shopping", Description="Keep it a secret!"},
-				new Item { Id = Guid.NewGuid().ToString(), Text = "Finish a todo list", Description="Done"},
+            var _items = new List<Item>
+            {
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Blue sword", Description="Deeper than the blue sea", Str="13"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Yellow pants", Description="Bright like the sun", Str="7"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Rambo guitar", Description="Noted", Str="13"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Wand candle", Description="Make a wish of death", Str="13"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Holiday staff", Description="Keep it a secret!", Str="10"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Frodo Hat", Description="Cool hat", Str="5"},
 			};
 
 			foreach (Item item in _items)

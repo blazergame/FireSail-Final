@@ -93,5 +93,5 @@ c:\users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\o
 c:\users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 c:\users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 c:\users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-c:\users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
-c:\users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\bin\Debug\DandD.Android.dll.mdb
+C:\Users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
+C:\Users\lij12\documents\visual studio 2017\Projects\DandD\DandD\DandD.Android\bin\Debug\DandD.Android.dll.mdb

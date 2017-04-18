@@ -11,7 +11,7 @@
 namespace DandD.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("c:\\users\\lij12\\documents\\visual studio 2017\\Projects\\DandD\\DandD\\DandD\\Views\\Abou" +
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\lij12\\documents\\visual studio 2017\\Projects\\DandD\\DandD\\DandD\\Views\\Abou" +
         "tPage.xaml")]
     public partial class AboutPage : global::Xamarin.Forms.ContentPage {
         

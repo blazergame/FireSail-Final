@@ -15,5 +15,12 @@
 			get { return description; }
 			set { SetProperty(ref description, value); }
 		}
-	}
+
+        string str = string.Empty;
+        public string Str
+        {
+            get { return str; }
+            set { SetProperty(ref str, value); }
+        }
+    }
 }
