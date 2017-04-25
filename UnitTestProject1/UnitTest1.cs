@@ -61,8 +61,9 @@ namespace UnitTestProject1
             Assert.AreEqual(c1.Dex, m1.Dex);
             Assert.AreEqual(c1.Speed, m1.Speed);
             Assert.AreEqual(c1.Health, m1.Health);
-
         }
+
+
 
         
     }

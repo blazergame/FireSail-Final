@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DandD.iOS", "DandD\DandD.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{1D884ED2-C856-486F-B375-CC66CE63D02A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattlefieldUnitTest", "BattlefieldUnitTest\BattlefieldUnitTest.csproj", "{9187919D-C80B-44DE-B448-90BA9271B49D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DandD\DandD\DandD.projitems*{24bcff16-f7c0-4661-a6ea-14703258f5a2}*SharedItemsImports = 4
@@ -66,6 +68,18 @@ Global
 		{1D884ED2-C856-486F-B375-CC66CE63D02A}.Release|iPhone.Build.0 = Release|Any CPU
 		{1D884ED2-C856-486F-B375-CC66CE63D02A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{1D884ED2-C856-486F-B375-CC66CE63D02A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhone.Build.0 = Release|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

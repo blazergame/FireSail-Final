@@ -5,13 +5,13 @@ using System.Text;
 
 namespace DandD.Services
 {
-    class BattlefieldController
+    public class BattlefieldController
     { 
 
 
-        public List<int> attack(Monster m1, Character c1)
+        public void attack(Monster m1, Character c1)
         {
-            List<int> Dmgholder = new List<int>();
+         //   List<int> Dmgholder = new List<int>();
             int first = compareSpeed(m1, c1);
 
             //Monster goes first
@@ -19,25 +19,25 @@ namespace DandD.Services
             {
                 int localDmg = damage(m1, c1);
                 int localDmg2 = damage(c1, m1);
-                Dmgholder.Add(localDmg);
-                Dmgholder.Add(localDmg2);
-                return Dmgholder;
+                //Dmgholder.Add(localDmg);
+                //Dmgholder.Add(localDmg2);
+               // return Dmgholder;
             }
             else
             {
                 //Character goes first
                 int localDmg = damage(c1, m1);
                 int localDmg2 = damage(m1, c1);
-                Dmgholder.Add(localDmg);
-                Dmgholder.Add(localDmg2);
-                return Dmgholder;
+                //Dmgholder.Add(localDmg);
+                //Dmgholder.Add(localDmg2);
+                //return Dmgholder;
             }
            
         }
 
-        private int compareSpeed(Monster m1, Character c1)
+        public int compareSpeed(Monster m1, Character c1)
         {
-            if (m1.Speed > c1.Speed)
+            if (m1.Dex > c1.Dex)
                 return 1;
             else return 2; 
         }
@@ -49,9 +49,9 @@ namespace DandD.Services
             return damage; 
         }
 
-        public bool isDead(int health)
+        public bool isDead(Fighter fight)
         {
-            if (health < 1)
+            if (fight.Health < 1)
             {
                 return true;
             }
