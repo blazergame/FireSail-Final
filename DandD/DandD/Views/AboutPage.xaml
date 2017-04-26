@@ -27,7 +27,7 @@
             <Label Text="Student - Christ Trent"/>
             <Label Text="Student - Dhruv Seth"/>
             <Label Text="Date/Time - 4/17,  9 pm" />
-            <Label Text="Code Review - Benson Li" />
+            <Label Text="Code Review - Crystal Nguyen" />
         </StackLayout>
     </ScrollView>
     </Grid>
