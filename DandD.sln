@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DandD", "DandD\DandD\DandD.shproj", "{94F3C29A-DBA1-435C-A44A-76782EA6C001}"
 EndProject
@@ -9,9 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DandD.Android", "DandD\Dand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DandD.iOS", "DandD\DandD.iOS\DandD.iOS.csproj", "{C3750079-D345-47EA-B9D5-5194458F83B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{1D884ED2-C856-486F-B375-CC66CE63D02A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterMonsterUnitTests", "UnitTestProject1\CharacterMonsterUnitTests.csproj", "{1D884ED2-C856-486F-B375-CC66CE63D02A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattlefieldUnitTest", "BattlefieldUnitTest\BattlefieldUnitTest.csproj", "{9187919D-C80B-44DE-B448-90BA9271B49D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemUnitTests", "ItemUnitTests\ItemUnitTests.csproj", "{5653390A-7393-48D3-9455-8AC66B0CAD39}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -80,6 +82,18 @@ Global
 		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhone.Build.0 = Release|Any CPU
 		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{9187919D-C80B-44DE-B448-90BA9271B49D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Release|iPhone.Build.0 = Release|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{5653390A-7393-48D3-9455-8AC66B0CAD39}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

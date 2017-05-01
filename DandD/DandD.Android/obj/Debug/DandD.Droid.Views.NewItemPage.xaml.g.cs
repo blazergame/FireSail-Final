@@ -11,7 +11,8 @@
 namespace DandD.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\lij12\\Desktop\\Firesail\\DandD\\DandD\\Views\\NewItemPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\trentc1\\Documents\\GitHub\\FireSail-Final\\DandD\\DandD\\Views\\NewItemPage.xa" +
+        "ml")]
     public partial class NewItemPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
