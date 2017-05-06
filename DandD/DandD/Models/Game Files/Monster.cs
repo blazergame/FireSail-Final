@@ -11,6 +11,13 @@ namespace DandD.Models.Game_Files
             this.Name = Name;
         }
 
+        public bool isValid()
+        {
+			if (Name != null)
+				return true;
+			return false;
+		}
+
 
     }
 }
