@@ -400,5 +400,13 @@ C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamar
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.MonsterPage.xaml.g.cs
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.CharacterPage.xaml.g.cs
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattlefieldPage.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLite-net.dll
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.lib.e_sqlite3.dll
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLite-net.xml
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLite-net.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.dll.mdb
