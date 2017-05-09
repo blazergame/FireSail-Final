@@ -8,6 +8,8 @@ namespace DandD
 {
 	public partial class App : Application
 	{
+        static ItemDatabase database;
+
         public App()
 		{
 			InitializeComponent();
@@ -15,7 +17,20 @@ namespace DandD
 			SetMainPage();
 		}
 
-		public static void SetMainPage()
+        public static ItemDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ItemDatabase(DependencyService.Get<ILocalFileHelper>().GetLocalFilePath("Item.db3"));
+                }
+                return database;
+            }
+
+        }
+
+        public static void SetMainPage()
 		{
             Current.MainPage = new TabbedPage
             {
