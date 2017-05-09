@@ -36,12 +36,12 @@ namespace DandD
             {
                 Children =
                 {
-                    new NavigationPage(new AboutPage())
+                    new NavigationPage(new MenuPage())
                     {
                         Title = "About",
                         Icon = Device.OnPlatform<string>("tab_about.png",null,null)
                     },
-                    new NavigationPage(new MenuPage())
+                    new NavigationPage(new AboutPage())
                     {
                         Title = "Menu",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
