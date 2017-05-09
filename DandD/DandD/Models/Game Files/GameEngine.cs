@@ -6,8 +6,8 @@ namespace DandD.Models.GameFiles
 {
 	public class GameEngine
 	{
-	    public List<Monster> Monsters;
-	    public List<Character> Characters;
+	    //public List<Monster> Monsters;
+	    //public List<Character> Characters;
 		public BattlefieldController battlefield;
         public bool Dead; 
         public bool GameOver;
@@ -15,8 +15,8 @@ namespace DandD.Models.GameFiles
 
         public GameEngine()
         {
-            Monsters = new List<Monster>();
-            Characters = new List<Character>();
+            //Monsters = new List<Monster>();
+            //Characters = new List<Character>();
             battlefield = new BattlefieldController();
             Dead = false;
             GameOver = false; 
@@ -25,28 +25,28 @@ namespace DandD.Models.GameFiles
 
         public void AddCharacter(Character character)
         {
-            if (character.IsValid() && Characters.Count < 4)
-                Characters.Add(character);
+            //if (character.IsValid() && Characters.Count < 4)
+            //    Characters.Add(character);
 
         }
 
         public void AddMonster(Monster monster)
         {
-            if (monster.isValid() && Monsters.Count < 4)
-                Monsters.Add(monster);
+            //if (monster.isValid() && Monsters.Count < 4)
+            //    Monsters.Add(monster);
         }
 
         public void PlayGame()
         {
-			while(!GameOver)
-                TakeTurn(Characters, Monsters);
+			//while(!GameOver)
+   //             TakeTurn(Characters, Monsters);
             ResetGame();
         }
 
         public void ResetGame()
         {
-            Characters.Clear();
-            Monsters.Clear();
+            //Characters.Clear();
+            //Monsters.Clear();
             TurnCounter = 0;
             GameOver = false;
         }
@@ -77,13 +77,13 @@ namespace DandD.Models.GameFiles
     
         public void RemoveCharcterFromListIfDead(Character character)
         {
-            Characters.Remove(character);
+            //Characters.Remove(character);
 
         }
 
         public void RemoveMonsterFromListIfDead(Monster monster)
         {
-            Monsters.Remove(monster);
+            //Monsters.Remove(monster);
         }
 
 

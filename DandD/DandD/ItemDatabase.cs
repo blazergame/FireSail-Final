@@ -15,6 +15,8 @@ namespace DandD
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Items>().Wait();
+            database.CreateTableAsync<Character>().Wait();
+            //database.CreateTableAsync<Monster>().Wait();
         }
         public Task<List<Items>> RetrieveItems()
         {
@@ -35,6 +37,30 @@ namespace DandD
         public Task<int> deleteItem(Items item)
         {
             return database.DeleteAsync(item);
+        }
+
+
+        //********************************************CHARACTERS*************************************************************
+
+        public Task<List<Character>> RetrieveCharacters()
+        {
+            return database.Table<Character>().ToListAsync();
+        }
+        public Task<Character> RetrieveSpecificCharacter(string name)
+        {
+            return database.Table<Character>().Where(i => i.Name == name).FirstOrDefaultAsync();
+        }
+        public Task<int> InsertCharacter(Character character)
+        {
+            if (character.Name != null) //Updating Item
+                return database.UpdateAsync(character);
+
+            return database.InsertAsync(character);
+        }
+
+        public Task<int> deleteCharacter(Character character)
+        {
+            return database.DeleteAsync(character);
         }
     }
 }

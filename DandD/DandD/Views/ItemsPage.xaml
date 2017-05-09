@@ -1,44 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DandD.Views.ItemsPage"
-              Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
-  <ContentPage.ToolbarItems>
-  	<ToolbarItem Text="Add Item" Clicked="AddItem_Clicked" />
-  </ContentPage.ToolbarItems>
-  <ContentPage.Content>
-    <StackLayout>
-      <ListView x:Name="ItemsListView"
-				ItemsSource="{Binding Items}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
-				ItemSelected="OnItemSelected">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <StackLayout Padding="10">
-                <Label Text="{Binding Text}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemTextStyle}"
-                       FontSize="16"/>
-                <Label Text="{Binding Description}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemDetailTextStyle}"
-                       FontSize="13"/>
-                 <Label Text="{Binding Str}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemDetailTextStyle}"
-                       FontSize="13"/>
-              </StackLayout>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-    </StackLayout> 
-  </ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DandD.Views.ItemsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Name" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                <Entry Text="{Binding Name}" Grid.Row="0" Grid.Column="1" />
+                <Label Text="Strength" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                <Entry Text="{Binding Str}" Grid.Row="1" Grid.Column="1" />
+                <Label Text="Dexterity" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                <Entry Text="{Binding Dex}" Grid.Row="3" Grid.Column="1" />
+                <Label Text="Health" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                <Entry Text="{Binding Health}" Grid.Row="3" Grid.Column="1" />
+            </Grid>
+            <!--<Button Text="Save" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White" Clicked="Save_Clicked" />-->
+            <!--<Button Text="Cancel" HorizontalOptions="FillAndExpand" BackgroundColor="Red" TextColor="White" Clicked="Cancel_Clicked" />-->
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
