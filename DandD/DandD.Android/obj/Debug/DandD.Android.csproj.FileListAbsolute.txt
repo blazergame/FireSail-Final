@@ -408,5 +408,8 @@ C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.lib.e_s
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLite-net.xml
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\SQLite-net.dll.mdb
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\System.IO.Compression.dll.mdb
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\SQLite-net.dll.mdb
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\System.IO.Compression.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.dll.mdb

@@ -31,21 +31,21 @@ namespace DandD
                         Title = "Item",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
                     },
-                    new NavigationPage(new CharacterPage())
-                    {
-                        Title = "Character",
-                        Icon = Device.OnPlatform<string>("tab_about.png",null,null)
-                    },
-                    new NavigationPage(new MonsterPage())
-                    {
-                        Title = "Monsters",
-                        Icon = Device.OnPlatform<string>("tab_about.png",null,null)
-                    },
-                     new NavigationPage(new BattlefieldPage())
-                    {
-                        Title = "Battlefield",
-                        Icon = Device.OnPlatform<string>("tab_about.png",null,null)
-                    },
+                    //new NavigationPage(new CharacterPage())
+                    //{
+                    //    Title = "Character",
+                    //    Icon = Device.OnPlatform<string>("tab_about.png",null,null)
+                    //},
+                    //new NavigationPage(new MonsterPage())
+                    //{
+                    //    Title = "Monsters",
+                    //    Icon = Device.OnPlatform<string>("tab_about.png",null,null)
+                    //},
+                    // new NavigationPage(new BattlefieldPage())
+                    //{
+                    //    Title = "Battlefield",
+                    //    Icon = Device.OnPlatform<string>("tab_about.png",null,null)
+                    //},
                 }
             };
         }
