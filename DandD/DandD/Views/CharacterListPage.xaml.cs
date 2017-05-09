@@ -12,13 +12,14 @@ namespace DandD.Views
 
         public CharacterListPage()
         {
+            this.Title = "Character List";
             InitializeComponent();
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            //CharacterListView.ItemsSource = await App.Database.RetrieveCharacters();
+            CharacterListView.ItemsSource = await App.Database.RetrieveCharacters();
         }
 
     }

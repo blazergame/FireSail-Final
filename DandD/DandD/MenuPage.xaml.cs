@@ -16,7 +16,7 @@ namespace DandD
 	{
 		public MenuPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 
         async void Character_Clicked(object sender, System.EventArgs e)

@@ -7,7 +7,7 @@ namespace DandD.Models.Game_Files
 {
     public class Character : Fighter
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Character_ID { get; set; }
         public int score { get; set; }
        
@@ -20,6 +20,8 @@ namespace DandD.Models.Game_Files
         public Character()
         {
             score = 0;
+            this.Name = Name; 
+
         }
 
         public bool IsValid()

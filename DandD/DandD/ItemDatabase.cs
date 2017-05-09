@@ -52,10 +52,9 @@ namespace DandD
         }
         public Task<int> InsertCharacter(Character character)
         {
-            if (character.Name != null) //Updating Item
-                return database.UpdateAsync(character);
-
-            return database.InsertAsync(character);
+            if (character.Character_ID != 0) //Updating Item
+               return database.UpdateAsync(character);
+             return database.InsertAsync(character);
         }
 
         public Task<int> deleteCharacter(Character character)

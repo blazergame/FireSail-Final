@@ -15,7 +15,7 @@ namespace DandD
 	{
 		public ItemPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 
 

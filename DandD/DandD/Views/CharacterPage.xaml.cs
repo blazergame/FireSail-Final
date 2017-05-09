@@ -16,7 +16,7 @@ namespace DandD.Views
 	{  
 		public CharacterPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 
         public async void Save_Clicked(object sender, System.EventArgs e)
@@ -25,15 +25,6 @@ namespace DandD.Views
             await App.Database.InsertCharacter(createCharacter);
             await Navigation.PopAsync();
         }
-
-
-
-        //async void Save_Clicked(object sender, System.EventArgs e)
-        //{
-        //    var ItemRow = (Character)BindingContext;
-        //    await App.Database.InsertItem(ItemRow);
-        //    await Navigation.PopAsync();
-        //}
 
         //async void Cancel_Clicked(object sender, System.EventArgs e)
         //{
