@@ -31,7 +31,7 @@ namespace DandD
 
         async void Monster_Clicked(object sender, System.EventArgs e)
         {
-           // await Navigation.PushAsync(new ItemsListPage());
+            await Navigation.PushAsync(new MonsterPage());
         }
         async void Items_Clicked(object sender, System.EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace DandD
         }
         async void PlayGame_Clicked(object sender, System.EventArgs e)
         {
-          //  await Navigation.PushAsync(new DeleteItemsPage());
+            await Navigation.PushAsync(new BattlefieldPage());
         }
     }
 }

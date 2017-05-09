@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DandD.Models.Game_Files;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,25 @@ namespace DandD.Views
 	{
 		public MonsterPage ()
 		{
-			InitializeComponent ();
+            this.Title = "Monster List";
+
+            InitializeComponent();
 		}
-	}
+
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            Monster m = new Monster();
+            m.Name = "Warlord";
+            m.Str = 5;
+            m.Dex = 5;
+            m.Speed = 10;
+            m.Health = 100;
+            m.Level = 34;
+
+           // await App.Database.InsertMonster(m);
+            MonsterListView.ItemsSource = await App.Database.RetrieveMonsters();
+        }
+    }
 }

@@ -14,7 +14,7 @@ namespace DandD.Models.Game_Files
         int health;
         int xpValue;
         int xp;
-        int level;
+        int level = 1;
         List<Items> EquippedList;
 
         public Fighter()

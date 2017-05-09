@@ -22,6 +22,11 @@ namespace DandD.Views
         public async void Save_Clicked(object sender, System.EventArgs e)
         {
             var createCharacter = (Character)BindingContext;
+            createCharacter.Str = 4;
+            createCharacter.Dex = 4;
+            createCharacter.Health = 100;
+            createCharacter.Level = 1;
+
             await App.Database.InsertCharacter(createCharacter);
             await Navigation.PopAsync();
         }

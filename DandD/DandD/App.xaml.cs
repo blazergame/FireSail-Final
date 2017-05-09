@@ -38,12 +38,12 @@ namespace DandD
                 {
                     new NavigationPage(new MenuPage())
                     {
-                        Title = "About",
+                        Title = "Menu",
                         Icon = Device.OnPlatform<string>("tab_about.png",null,null)
                     },
                     new NavigationPage(new AboutPage())
                     {
-                        Title = "Menu",
+                        Title = "About",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
                     },
                     //new NavigationPage(new CharacterPage())
