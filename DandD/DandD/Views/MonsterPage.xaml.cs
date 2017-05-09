@@ -32,6 +32,7 @@ namespace DandD.Views
             m.Health = 100;
             m.Level = 34;
 
+            //Uncomment if you want to add another monster into db
            // await App.Database.InsertMonster(m);
             MonsterListView.ItemsSource = await App.Database.RetrieveMonsters();
         }

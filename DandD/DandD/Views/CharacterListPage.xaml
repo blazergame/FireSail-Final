@@ -4,7 +4,7 @@
         <ListView x:Name="CharacterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                <TextCell Text="{Binding Name}" Detail="{Binding Level}"/>
+                <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
                 <!--<TextCell Text="{Binding Str}" />-->
                 <!--<TextCell Text="{Binding Dex}"/>
                 <TextCell Text="{Binding Health}" />-->

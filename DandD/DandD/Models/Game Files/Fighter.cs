@@ -6,6 +6,7 @@ namespace DandD.Models.Game_Files
 {
     public class Fighter : BaseDataObject
     {
+        int previousHealth; 
         string name;
         string category;
         int str;
@@ -15,6 +16,8 @@ namespace DandD.Models.Game_Files
         int xpValue;
         int xp;
         int level = 1;
+        int damageReceived;
+
         List<Items> EquippedList;
 
         public Fighter()
@@ -22,10 +25,23 @@ namespace DandD.Models.Game_Files
 
         }
 
+
+        public int DamangeReceived
+        {
+            get { return damageReceived; }
+            set { SetProperty(ref damageReceived, value); }
+        }
+
         public string Name
         {
             get { return name; }
             set { SetProperty(ref name, value); }
+        }
+
+        public int PreviousHealth
+        {
+            get { return previousHealth; }
+            set { SetProperty(ref previousHealth, value); }
         }
 
         public string Category

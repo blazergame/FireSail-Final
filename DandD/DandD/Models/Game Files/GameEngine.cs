@@ -6,8 +6,8 @@ namespace DandD.Models.GameFiles
 {
 	public class GameEngine
 	{
-	    //public List<Monster> Monsters;
-	    //public List<Character> Characters;
+	    public List<Monster> Monsters;
+	    public List<Character> Characters;
 		public BattlefieldController battlefield;
         public bool Dead; 
         public bool GameOver;
@@ -52,51 +52,51 @@ namespace DandD.Models.GameFiles
         }
 
 
-        public void TakeTurn(List<Character> Characters, List<Monster> Monsters)
-        {
-            CheckIfGameOver(Characters, Monsters);
-            if (GameOver)
-                return; 
+        //public void TakeTurn(List<Character> Characters, List<Monster> Monsters)
+        //{
+        //    CheckIfGameOver(Characters, Monsters);
+        //    if (GameOver)
+        //        return; 
 
-            for (int i = 0; i < Characters.Count; i++)
-            {
-                battlefield.attack(Monsters[i], Characters[i]);
-                Dead = battlefield.isDead(Monsters[i]);
-                if (Dead == true)
-                {
-                    RemoveCharcterFromListIfDead(Characters[i]);
-                }
-                Dead = battlefield.isDead(Characters[i]);
-                if (Dead == true)
-                {
-                    RemoveMonsterFromListIfDead(Monsters[i]);
-                }
-            }
-            TurnCounter++;
-        }
+        //    for (int i = 0; i < Characters.Count; i++)
+        //    {
+        //        battlefield.attack(Monsters[i], Characters[i]);
+        //        Dead = battlefield.isDead(Monsters[i]);
+        //        if (Dead == true)
+        //        {
+        //            RemoveCharcterFromListIfDead(Characters[i]);
+        //        }
+        //        Dead = battlefield.isDead(Characters[i]);
+        //        if (Dead == true)
+        //        {
+        //            RemoveMonsterFromListIfDead(Monsters[i]);
+        //        }
+        //    }
+        //    TurnCounter++;
+        //}
     
-        public void RemoveCharcterFromListIfDead(Character character)
-        {
-            //Characters.Remove(character);
+        //public void RemoveCharcterFromListIfDead(Character character)
+        //{
+        //    //Characters.Remove(character);
 
-        }
+        //}
 
-        public void RemoveMonsterFromListIfDead(Monster monster)
-        {
-            //Monsters.Remove(monster);
-        }
+        //public void RemoveMonsterFromListIfDead(Monster monster)
+        //{
+        //    //Monsters.Remove(monster);
+        //}
 
 
-        public void CheckIfGameOver(List<Character> Characters, List<Monster> Monsters)
-        {
-            if (Characters.Count == 0 || Monsters.Count == 0)
-                EndGame(); 
-        }
+        //public void CheckIfGameOver(List<Character> Characters, List<Monster> Monsters)
+        //{
+        //    if (Characters.Count == 0 || Monsters.Count == 0)
+        //        EndGame(); 
+        //}
        
-        public void EndGame()
-        {
-            GameOver = true; 
-        }
+        //public void EndGame()
+        //{
+        //    GameOver = true; 
+        //}
 
     }
 }

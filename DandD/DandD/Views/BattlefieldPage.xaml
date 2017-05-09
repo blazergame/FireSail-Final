@@ -6,7 +6,7 @@
         <ListView x:Name="BattleListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Character_ID}"/>
+                    <TextCell Text="{Binding Health}" Detail="{Binding DamangeReceived}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

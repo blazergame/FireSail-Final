@@ -9,29 +9,33 @@ namespace DandD.Services
     { 
 
 
-        public void attack(Monster m1, Character c1)
+        public List<int> attack(ref Monster m1, ref Character c1)
         {
-         //   List<int> Dmgholder = new List<int>();
+           List<int> Dmgholder = new List<int>();
             int first = compareSpeed(m1, c1);
 
             //Monster goes first
             if (first == 1)
             {
-                int localDmg = damage(m1, c1);
-                int localDmg2 = damage(c1, m1);
-                //Dmgholder.Add(localDmg);
-                //Dmgholder.Add(localDmg2);
-               // return Dmgholder;
+                int localDmg = damage(ref m1,  ref c1);
+                int localDmg2 = damage(ref m1, ref c1);
+                Dmgholder.Add(localDmg);
+                Dmgholder.Add(localDmg2);
+
+               return Dmgholder;
+
             }
             else
             {
                 //Character goes first
-                int localDmg = damage(c1, m1);
-                int localDmg2 = damage(m1, c1);
-                //Dmgholder.Add(localDmg);
-                //Dmgholder.Add(localDmg2);
-                //return Dmgholder;
+                int localDmg = damage(ref m1, ref c1);
+                int localDmg2 = damage(ref m1, ref c1);
+                Dmgholder.Add(localDmg);
+                Dmgholder.Add(localDmg2);
+                return Dmgholder;
             }
+
+            
            
         }
 
@@ -42,11 +46,18 @@ namespace DandD.Services
             else return 2; 
         }
 
-        private int damage(Fighter m1, Fighter c1)
+        private int damage(ref Monster m1, ref Character c1)
         {
             int damage = (m1.Str * 4);
             c1.Health -= damage;
             return damage; 
+        }
+
+        private int damageMonster(ref Monster m1, ref Character c1)
+        {
+            int damage = (c1.Str * 4);
+            m1.Health -= damage;
+            return damage;
         }
 
         public bool isDead(Fighter fight)
