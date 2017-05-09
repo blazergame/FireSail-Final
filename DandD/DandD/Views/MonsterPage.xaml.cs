@@ -25,15 +25,15 @@ namespace DandD.Views
         {
             base.OnAppearing();
             Monster m = new Monster();
-            m.Name = "Warlord";
+            m.Name = "UW";
             m.Str = 5;
             m.Dex = 5;
             m.Speed = 10;
             m.Health = 100;
-            m.Level = 34;
+            m.Level = 1;
 
             //Uncomment if you want to add another monster into db
-           // await App.Database.InsertMonster(m);
+         // await App.Database.InsertMonster(m);
             MonsterListView.ItemsSource = await App.Database.RetrieveMonsters();
         }
     }

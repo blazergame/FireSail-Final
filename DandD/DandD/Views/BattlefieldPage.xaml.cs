@@ -21,7 +21,7 @@ namespace DandD.Views
         GameEngine ge = new GameEngine();
         List<Character> c;
         List <Monster> m;
-        readonly SQLiteAsyncConnection database;
+        List<int> healths = new List<int>();
 
         public BattlefieldPage ()
 		{
@@ -55,23 +55,32 @@ namespace DandD.Views
 
         public async void playGame()
         {
-            var m1 = m[0];
-            var c1 = c[0];
-      
-            damageList = ge.battlefield.attack(ref m1,  ref c1);
-            healthMonster = damageList[0];
-            characterHealth = damageList[1];
+            for (var i = 0; i < c.Count; i++)
+            {
+                healths.Clear();
 
-            m1.DamangeReceived = damageList[0];
-            c1.DamangeReceived = damageList[1];
+                var m1 = m[i];
+                var c1 = c[i];
 
-            List<int> healths = new List<int>();
-            healths.Add(healthMonster);
-            healths.Add(characterHealth);
-            await App.Database.UpdateCharacter(c1);
-            
-            BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
+                damageList = ge.battlefield.attack(ref m1, ref c1);
+                healthMonster = damageList[0];
+                characterHealth = damageList[1];
 
+                m1.DamangeReceived = damageList[0];
+                c1.DamangeReceived = damageList[1];
+
+                healths.Add(healthMonster);
+                healths.Add(characterHealth);
+                if ((c1.Health - characterHealth) > 0)
+                    await App.Database.UpdateCharacter(c1);
+                else
+                {
+                    c1.Health = 0;
+                    await App.Database.UpdateCharacter(c1);
+                }
+                BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
+
+            }
 
         }
     }
