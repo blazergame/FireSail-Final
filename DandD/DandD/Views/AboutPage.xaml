@@ -23,9 +23,7 @@
     <ScrollView Grid.Row="1">
         <StackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="CPSC - 4910 - SQ"/>
-            <Label Text="Student - Jia Hui Li(Benson)" />
-            <Label Text="Student - Christ Trent"/>
-            <Label Text="Student - Dhruv Seth"/>
+            <Label Text="Student - Chris Trent"/>
             <Label Text="Date/Time - 4/17,  9 pm" />
             <Label Text="Code Review - Crystal Nguyen" />
         </StackLayout>
