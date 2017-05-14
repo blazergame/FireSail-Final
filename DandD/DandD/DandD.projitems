@@ -28,6 +28,12 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ViewItems.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\CharacterDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MonsterDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -90,6 +96,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Game Files\Holder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\ViewItems.xaml.cs">
       <DependentUpon>ViewItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CharacterDetail.xaml.cs">
+      <DependentUpon>CharacterDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MonsterDetail.xaml.cs">
+      <DependentUpon>MonsterDetail.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

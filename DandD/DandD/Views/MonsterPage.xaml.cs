@@ -33,8 +33,16 @@ namespace DandD.Views
             m.Level = 1;
 
             //Uncomment if you want to add another monster into db
-         // await App.Database.InsertMonster(m);
+            //await App.Database.InsertMonster(m);
             MonsterListView.ItemsSource = await App.Database.RetrieveMonsters();
         }
+
+		async void Monster_MonsterSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+		{
+			if (e.SelectedItem != null)
+			{
+				await Navigation.PushAsync(new MonsterDetail { BindingContext = e.SelectedItem as Monster });
+			}
+		}
     }
 }
