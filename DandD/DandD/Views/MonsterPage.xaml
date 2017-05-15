@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DandD.Views.MonsterPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ADD" Clicked="AddMonster_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView x:Name="MonsterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemSelected="Monster_MonsterSelected">
             <ListView.ItemTemplate>

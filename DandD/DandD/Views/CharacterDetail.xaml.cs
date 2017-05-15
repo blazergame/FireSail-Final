@@ -18,12 +18,12 @@ namespace DandD.Views
 			InitializeComponent ();
 		}
 
-        /*async void Save_Clicked(object sender, System.EventArgs e)
+        async void Add_Clicked(object sender, System.EventArgs e)
         {
             var Char = (Character)BindingContext;
             await App.Database.InsertCharacter(Char);
             await Navigation.PopAsync();
-        }*/
+        }
 
         async void Delete_Clicked(object sender, System.EventArgs e)
         {
