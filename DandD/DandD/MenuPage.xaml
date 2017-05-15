@@ -9,7 +9,7 @@
             <Button Text="Character" Clicked="Character_Clicked" />
             <Button Text="Character List" Clicked="CharacterRead_Clicked" />
             <Button Text="Monster" Clicked="Monster_Clicked" />
-            <Button Text="Items" Clicked="ItemsRead_Clicked" />
+            <Button Text="Items" Clicked="Items_Clicked" />
             <Button Text="Play Game" Clicked="PlayGame_Clicked" />
         </StackLayout>
     </ContentPage.Content>

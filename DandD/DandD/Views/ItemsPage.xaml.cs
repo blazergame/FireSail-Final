@@ -4,6 +4,10 @@ using DandD.Models;
 using DandD.ViewModels;
 
 using Xamarin.Forms;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Net.Http.Headers;
+using DandD.Models.Game_Files;
 
 namespace DandD.Views
 {
@@ -11,36 +15,146 @@ namespace DandD.Views
 	{
 		ItemsViewModel viewModel;
 
-		public ItemsPage()
-		{
-			InitializeComponent();
+        public ItemsPage()
+        {
+            this.Title = "API List";
+            InitializeComponent();
+            listButton.Clicked += async (s, e) =>
+            {
+                await getAPI();
 
-			BindingContext = viewModel = new ItemsViewModel();
-		}
+            };
 
-		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-		{
-			var item = args.SelectedItem as Item;
-			if (item == null)
-				return;
+            listButton2.Clicked += async (s, e) =>
+            {
+                await getAPI2();
 
-			await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            };
 
-			// Manually deselect item
-			//ItemsListView.SelectedItem = null;
-		}
+            listButton3.Clicked += async (s, e) =>
+            {
+                await getAPI3();
 
-		async void AddItem_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new NewItemPage());
-		}
+            };
 
-		//protected override void OnAppearingAsync()
-		//{
-		//	base.OnAppearing();
+            reset.Clicked += async (s, e) =>
+            {
+                App.Database.reset();
+            };
+        }
 
-		//	if (viewModel.Items.Count == 0)
-		//		viewModel.LoadItemsCommand.Execute(null);
-		//}
-	}
+        public async Task<string> getAPI()
+        {
+            App.Database.reset();
+            var client = new System.Net.Http.HttpClient();
+            client.BaseAddress = new Uri("http://thursdayhomework.azurewebsites.net/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+            var response = await client.GetAsync("API/GetItemList/1");
+
+            var listJson = response.Content.ReadAsStringAsync().Result;
+
+
+            dynamic results = JsonConvert.DeserializeObject(listJson);
+
+            var data = string.Empty;
+
+
+            for (var i = 0; i < results.data.Count; i++)
+            {
+                data = results.data[i].Name;
+                Items api = new Items();
+                if (results.msg != "OK" && results.error_code != 0)
+                    break;
+                api.Error_Code = results.error_code;
+                api.Msg = results.msg;
+                api.Name = results.data[i].Name;
+                api.Attribute = results.data[i].Attribute;
+                api.Value = results.data[i].Value;
+
+                await App.Database.InsertItem(api);
+            }
+
+            return data;
+        }
+
+        public async Task<string> getAPI2()
+        {
+            App.Database.reset();
+            var client = new System.Net.Http.HttpClient();
+            client.BaseAddress = new Uri("http://thursdayhomework.azurewebsites.net/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+
+            var response = await client.GetAsync("API/GetItemList/2");
+
+            var listJson = response.Content.ReadAsStringAsync().Result;
+
+
+            dynamic results = JsonConvert.DeserializeObject(listJson);
+
+            var data = string.Empty;
+
+
+            for (var i = 0; i < results.data.Count; i++)
+            {
+                data = results.data[i].Name;
+                Items api = new Items();
+                if (results.msg != "OK" && results.error_code != 0)
+                    break;
+                api.Error_Code = results.error_code;
+                api.Msg = results.msg;
+                api.Name = results.data[i].Name;
+                api.Attribute = results.data[i].Attribute;
+                api.Value = results.data[i].Value;
+
+                await App.Database.InsertItem(api);
+            }
+
+            return data;
+        }
+
+        public async Task<string> getAPI3()
+        {
+            App.Database.reset();
+            var client = new System.Net.Http.HttpClient();
+            client.BaseAddress = new Uri("http://thursdayhomework.azurewebsites.net/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var response = await client.GetAsync("API/GetItemList/3");
+            var listJson = response.Content.ReadAsStringAsync().Result;
+
+            dynamic results = JsonConvert.DeserializeObject(listJson);
+
+            var data = string.Empty;
+
+
+            for (var i = 0; i < results.data.Count; i++)
+            {
+                data = results.data[i].Name;
+                Items api = new Items();
+                if (results.msg != "OK" && results.error_code != 0)
+                    break;
+                api.Error_Code = results.error_code;
+                api.Msg = results.msg;
+                api.Name = results.data[i].Name;
+                api.Attribute = results.data[i].Attribute;
+                api.Value = results.data[i].Value;
+
+                await App.Database.InsertItem(api);
+            }
+
+
+            return data;
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            ApiListView.ItemsSource = await App.Database.RetrieveItems();
+        }
+    }
 }

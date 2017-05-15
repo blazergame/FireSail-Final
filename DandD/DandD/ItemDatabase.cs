@@ -5,12 +5,12 @@ using SQLite;
 using SQLitePCL;
 using System.Threading.Tasks;
 using DandD.Models.Game_Files;
+using DandD.Models;
 
 namespace DandD
 {
     public class ItemDatabase
     {
-        int count;
         readonly SQLiteAsyncConnection database;
         public ItemDatabase(string dbPath)
         {
@@ -19,29 +19,26 @@ namespace DandD
             database.CreateTableAsync<Character>().Wait();
             database.CreateTableAsync<Monster>().Wait();
         }
+
         public Task<List<Items>> RetrieveItems()
         {
-            
             return database.Table<Items>().ToListAsync();
         }
-        public Task<Items> RetrieveSpecificItem(string name)
-        {
-            return database.Table<Items>().Where(i => i.Name == name).FirstOrDefaultAsync();
-        }
+
         public Task<int> InsertItem(Items item)
         {
-            //if (item.Item_ID != 0) //Updating Item
-              //  return database.UpdateAsync(item);
-            count++;
             return database.InsertAsync(item);
         }
 
-      
+        public Task<int> deleteItem(Items item)
+        {
+            return database.DeleteAsync(item);
+        }
 
-		public void reset() 
-		{
-            database.ExecuteAsync("DELETE FROM Items");
-		}
+        public Task<int> updateItem(Items item)
+        {
+            return database.UpdateAsync(item);
+        }
 
         //********************************************CHARACTERS*************************************************************
 
@@ -55,14 +52,14 @@ namespace DandD
         }
         public Task<int> InsertCharacter(Character character)
         {
-            //  if (character.Character_ID != 0) //Updating Item
-            //  return database.UpdateAsync(character);
-            return database.InsertAsync(character);
+          //  if (character.Character_ID != 0) //Updating Item
+             //  return database.UpdateAsync(character);
+             return database.InsertAsync(character);
         }
 
         public Task<int> UpdateCharacter(Character character)
         {
-            return database.UpdateAsync(character);
+                return database.UpdateAsync(character);
         }
 
         public Task<int> deleteCharacter(Character character)
@@ -71,26 +68,28 @@ namespace DandD
         }
 
 
-        //*****************************************MONSTER TABLES*************************************************
+		//*****************************************MONSTER TABLES*************************************************
 
-        public Task<List<Monster>> RetrieveMonsters()
+		public Task<List<Monster>> RetrieveMonsters()
+		{
+			return database.Table<Monster>().ToListAsync();
+		}
+		
+		public Task<int> InsertMonster(Monster character)
+		{
+			if (character.Monster_ID != 0) //Updating Item
+				return database.UpdateAsync(character);
+			return database.InsertAsync(character);
+		}
+
+		public Task<int> deleteMonster(Character character)
+		{
+			return database.DeleteAsync(character);
+		}
+
+        public void reset()
         {
-            return database.Table<Monster>().ToListAsync();
+            database.ExecuteAsync("DELETE FROM Items");
         }
-
-        public Task<int> InsertMonster(Monster character)
-        {
-            if (character.Monster_ID != 0) //Updating Item
-                return database.UpdateAsync(character);
-            return database.InsertAsync(character);
-        }
-
-        public Task<int> deleteMonster(Character character)
-        {
-            return database.DeleteAsync(character);
-        }
-
     }
 }
-
-

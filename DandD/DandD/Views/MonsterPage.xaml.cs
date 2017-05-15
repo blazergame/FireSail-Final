@@ -36,5 +36,13 @@ namespace DandD.Views
          // await App.Database.InsertMonster(m);
             MonsterListView.ItemsSource = await App.Database.RetrieveMonsters();
         }
+
+        async void Monster_MonsterSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new MonsterDetail { BindingContext = e.SelectedItem as Monster });
+            }
+        }
     }
 }

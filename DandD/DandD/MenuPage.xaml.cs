@@ -33,13 +33,14 @@ namespace DandD
         {
             await Navigation.PushAsync(new MonsterPage());
         }
-        async void ItemsRead_Clicked(object sender, System.EventArgs e)
+        async void Items_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new ItemsListPage());
+           await Navigation.PushAsync(new ItemsPage());
         }
         async void PlayGame_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new BattlefieldPage());
         }
+
     }
 }

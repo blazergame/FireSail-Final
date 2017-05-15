@@ -22,13 +22,15 @@ namespace DandD.Views
             CharacterListView.ItemsSource = await App.Database.RetrieveCharacters();
         }
 
+        async void Character_CharacterSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new CharacterDetail { BindingContext = e.SelectedItem as Character });
+            }
+        }
+
     }
 
-    //async void Items_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
-    //{
-    //    if (e.SelectedItem != null)
-    //    {
-    //        //await Navigation.PushAsync(new ReadItems() { BindingContext = e.SelectedItem as Item });
-    //    }
-    //}
+
 }
