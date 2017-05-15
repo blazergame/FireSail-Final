@@ -6,8 +6,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Image Source="http://dnd.wizards.com/sites/default/files/media/styles/hubpage_banner/public/07_LATEST-STORY_Generic_subsection_hero_140714_0.jpg?itok=6cB8aN6_" />
-            <Button Text="Character" Clicked="Character_Clicked" />
-            <Button Text="Character List" Clicked="CharacterRead_Clicked" />
+            <!-- <Button Text="Character" Clicked="Character_Clicked" />-->
+            <Button Text="Characters" Clicked="CharacterRead_Clicked" />
             <Button Text="Monster" Clicked="Monster_Clicked" />
             <Button Text="Items" Clicked="Items_Clicked" />
             <Button Text="Play Game" Clicked="PlayGame_Clicked" />

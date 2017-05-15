@@ -1,5 +1,6 @@
 ﻿using DandD.Models.Game_Files;
 using DandD.Models.GameFiles;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +23,10 @@ namespace DandD.Views
             CharacterListView.ItemsSource = await App.Database.RetrieveCharacters();
         }
 
+        async void AddCharacter_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CharacterPage() { BindingContext = new Character() });
+        }
         async void Character_CharacterSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)

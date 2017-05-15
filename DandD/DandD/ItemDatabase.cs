@@ -82,7 +82,7 @@ namespace DandD
 			return database.InsertAsync(character);
 		}
 
-		public Task<int> deleteMonster(Character character)
+		public Task<int> deleteMonster(Monster character)
 		{
 			return database.DeleteAsync(character);
 		}

@@ -18,15 +18,17 @@ namespace DandD.Views
 			InitializeComponent ();
 		}
 
-        async void Save_Clicked(object sender, System.EventArgs e)
+        /*async void Save_Clicked(object sender, System.EventArgs e)
         {
             var Mon = (Monster)BindingContext;
             await App.Database.InsertMonster(Mon);
             await Navigation.PopAsync();
-        }
+        }*/
 
-        async void Cancel_Clicked(object sender, System.EventArgs e)
+        async void Delete_Clicked(object sender, System.EventArgs e)
         {
+            var Mon = (Monster)BindingContext;
+            await App.Database.deleteMonster(Mon);
             await Navigation.PopAsync();
         }
     }

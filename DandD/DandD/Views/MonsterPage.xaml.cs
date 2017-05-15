@@ -13,7 +13,9 @@ namespace DandD.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MonsterPage : ContentPage
 	{
-		public MonsterPage ()
+        int monster_count = 1;
+
+        public MonsterPage ()
 		{
             this.Title = "Monster List";
 
@@ -25,15 +27,16 @@ namespace DandD.Views
         {
             base.OnAppearing();
             Monster m = new Monster();
-            m.Name = "UW";
+            m.Name = "Monster" + monster_count;
             m.Str = 5;
             m.Dex = 5;
             m.Speed = 10;
             m.Health = 100;
             m.Level = 1;
 
-            //Uncomment if you want to add another monster into db
-         // await App.Database.InsertMonster(m);
+            //Uncomment next two lines if you want to add another monster into db
+            //await App.Database.InsertMonster(m);
+            //monster_count++;
             MonsterListView.ItemsSource = await App.Database.RetrieveMonsters();
         }
 

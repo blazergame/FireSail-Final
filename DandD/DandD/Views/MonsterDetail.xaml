@@ -23,8 +23,8 @@
                 <Label Text="XP: " Grid.Row="5" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
                 <Label Text="{Binding Xp}" Grid.Row="5" Grid.Column="1" />
             </Grid>
-            <Button Text="Save" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White" Clicked="Save_Clicked" />
-            <Button Text="Cancel" HorizontalOptions="FillAndExpand" BackgroundColor="Red" TextColor="White" Clicked="Cancel_Clicked" />
+            <!-- <Button Text="Save" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White" Clicked="Save_Clicked" />-->
+            <Button Text="Delete" HorizontalOptions="FillAndExpand" BackgroundColor="Red" TextColor="White" Clicked="Delete_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
