@@ -150,6 +150,7 @@ namespace DandD.Views
                 System.Diagnostics.Debug.WriteLine(totalHP);
                 totalHP -= c1.DamangeReceived;
 
+                //Assign score to user
                 score+= rand.Next(1,10);
                 assignHighScore(c[i], score);
 
