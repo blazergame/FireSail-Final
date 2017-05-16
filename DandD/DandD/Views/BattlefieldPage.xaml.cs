@@ -264,11 +264,14 @@ namespace DandD.Views
 
                 for (int j = 0; j < c.Count; j++)
                 {
-                    if (c[j].Health > 0)
+                    System.Diagnostics.Debug.WriteLine(c[j].Health);
+                    if (c[j].Health >= 0)
                     {
+                        System.Diagnostics.Debug.WriteLine("Inside IF characterHP < 0");
                         //Transfer attributes from items to character : EQUIP ITEM logic
                         for (int i = 0; i < items.Count; i++)
                         {
+                            System.Diagnostics.Debug.WriteLine("Inside second loop");
                             if (items[i].Dex > 0)
                                 c[j].Dex += items[i].Dex;
 
