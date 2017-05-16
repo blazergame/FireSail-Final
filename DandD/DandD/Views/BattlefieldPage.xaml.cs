@@ -64,6 +64,7 @@ namespace DandD.Views
             int totalHP = 0;
             int i = 0;
             int score = 0;
+            Random rand = new Random();
 
             healths.Clear();
 
@@ -132,26 +133,35 @@ namespace DandD.Views
 				else
 				{
 					m1.Health = 0;
+                    c1.Xp += m1.Xp;
+
+                    if (c1.didLevelUp())
+                    {
+                        System.Diagnostics.Debug.WriteLine("CHARACTER LEVELED UP");
+                      
+                    }
+
 					await App.Database.InsertMonster(m1);
 				}
 
                 MonsterDoingDamageView.ItemsSource = await App.Database.RetrieveMonsters();
                 CharacterDoingDamageView.ItemsSource = await App.Database.RetrieveCharacters();
-                //  System.Threading.Thread.Sleep(100);
+
                 System.Diagnostics.Debug.WriteLine(totalHP);
                 totalHP -= c1.DamangeReceived;
-                score++;
+
+                //Assign score to user
+                score+= rand.Next(1,10);
+                assignHighScore(c[i], score);
+
+
             }
 
-             //Need to do level up once monster has died
-             //Get exp value from monster, add to c1.xp
-             //Call c1.didLevelUp(). If return true, it has leveled up
-             //c1.didLevelUp will automatically add random values to the level up stats
-            
-            for(var _i = 0; _i < c.Count; _i++)
-            {
-                assignHighScore(c[_i],score);
-            }
+            //Need to do level up once monster has died
+            //Get exp value from monster, add to c1.xp
+            //Call c1.didLevelUp(). If return true, it has leveled up
+            //c1.didLevelUp will automatically add random values to the level up stats
+
 
             displayAlertWin();
 
@@ -167,8 +177,8 @@ namespace DandD.Views
                 //Push items drop page gained from battle page
                 //From that page, after clicking okay, should return to main menu
                 equipItem();
-               resetBattleFieldMonster();
-               resetBattleFieldCharacter();
+                resetBattleFieldMonster();
+                resetBattleFieldCharacter();
                 await Navigation.PopAsync();
             }
 
