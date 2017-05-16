@@ -11,7 +11,7 @@
 namespace DandD.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\lij12\\FireSail-Final\\DandD\\DandD\\Views\\AboutPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\dhruv\\Desktop\\FireSail-Final\\DandD\\DandD\\Views\\AboutPage.xaml")]
     public partial class AboutPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

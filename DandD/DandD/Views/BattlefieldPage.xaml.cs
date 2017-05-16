@@ -166,8 +166,9 @@ namespace DandD.Views
             {
                 //Push items drop page gained from battle page
                 //From that page, after clicking okay, should return to main menu
-                resetBattleFieldMonster();
-                resetBattleFieldCharacter();
+                equipItem();
+               resetBattleFieldMonster();
+               resetBattleFieldCharacter();
                 await Navigation.PopAsync();
             }
 
@@ -233,11 +234,48 @@ namespace DandD.Views
             await App.Database.UpdateCharacter(character);
         }
 
-        private void equipItem()
+        async private void equipItem()
         {
+            System.Diagnostics.Debug.WriteLine("Inside equipItem");
+            c = await App.Database.RetrieveCharacters();
+            m = await App.Database.RetrieveMonsters();
+
+            int totalMonsterHP = 0; //For equipping items when all monsters are dead
+
+            for (int i = 0; i < m.Count; i++)
+            {
+                totalMonsterHP += m[i].Health;
+            }
+
+            if (totalMonsterHP <= 0)
+            {
+                var items = await App.Database.RetrieveItems(); //Dropping Items LOGIC
+                System.Diagnostics.Debug.WriteLine("Inside IF HP <0 loop");
+
+                for (int j = 0; j < c.Count; j++)
+                {
+                    if (c[j].Health > 0)
+                    {
+                        //Transfer attributes from items to character : EQUIP ITEM logic
+                        for (int i = 0; i < items.Count; i++)
+                        {
+                            if (items[i].Dex > 0)
+                                c[j].Dex += items[i].Dex;
+
+                            if (items[i].Str > 0)
+                                c[j].Str += items[i].Str;
+
+                            if (items[i].Speed > 0)
+                                c[j].Speed += items[i].Speed;
+
+                            await App.Database.UpdateCharacter(c[j]);
+                        }
+                    }
+                }
+
+
+            }
             var listOfItem = App.Database.RetrieveItems();
-
-
             System.Diagnostics.Debug.WriteLine(listOfItem);
         }
     }
