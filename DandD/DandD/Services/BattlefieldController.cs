@@ -17,8 +17,8 @@ namespace DandD.Services
             //Monster goes first
             if (first == 1)
             {
-                int localDmg = damage(ref m1,  ref c1);
-                int localDmg2 = damage(ref m1, ref c1);
+                int localDmg = damageCharacter(ref m1,  ref c1);
+                int localDmg2 = damageMonster(ref m1, ref c1);
                 Dmgholder.Add(localDmg);
                 Dmgholder.Add(localDmg2);
 
@@ -28,10 +28,10 @@ namespace DandD.Services
             else
             {
                 //Character goes first
-                int localDmg = damage(ref m1, ref c1);
-                int localDmg2 = damage(ref m1, ref c1);
-                Dmgholder.Add(localDmg);
+                int localDmg = damageMonster(ref m1, ref c1);
+                int localDmg2 = damageCharacter(ref m1, ref c1);
                 Dmgholder.Add(localDmg2);
+                Dmgholder.Add(localDmg);
                 return Dmgholder;
             }
 
@@ -46,7 +46,7 @@ namespace DandD.Services
             else return 2; 
         }
 
-        private int damage(ref Monster m1, ref Character c1)
+        private int damageCharacter(ref Monster m1, ref Character c1)
         {
             int damage = (m1.Str * 4);
             c1.Health -= damage;

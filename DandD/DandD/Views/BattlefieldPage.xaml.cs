@@ -33,9 +33,7 @@ namespace DandD.Views
 
         protected async override void OnAppearing()
         {
-            //var characters = App.Database.RetrieveCharacters();
             base.OnAppearing();
-            //BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
 
             c = await App.Database.RetrieveCharacters();
             m = await App.Database.RetrieveMonsters();
@@ -58,13 +56,39 @@ namespace DandD.Views
 
         public async void playGame()
         {
-            for (var i = 0; i < c.Count; i++)
+            int totalHP = 0;
+            int i = 0;
+            healths.Clear();
+
+            for (int k = 0; k < c.Count; k++)
             {
-                healths.Clear();
+                var temp = c[i];
+
+                totalHP += temp.Health;
+                
+            }
+
+            System.Diagnostics.Debug.WriteLine(totalHP);
+
+            while (totalHP > 0)
+            {
+
 
                 var m1 = m[i];
                 var c1 = c[i];
 
+                if (i+1 <= c.Count) {
+                    m1 = m[i];
+                    c1 = c[i];
+                    i++;
+
+                }
+
+                if (i >= c.Count)
+                    i = 0;
+
+                //[0] holds monster's damage to character
+                //[1] holds character's damage to monster
                 damageList = ge.battlefield.attack(ref m1, ref c1);
                 healthMonster = damageList[0];
                 characterHealth = damageList[1];
@@ -72,8 +96,12 @@ namespace DandD.Views
                 m1.DamangeReceived = damageList[0];
                 c1.DamangeReceived = damageList[1];
 
+                System.Diagnostics.Debug.WriteLine(m1.Name + " gave " + c1.Name + " " + damageList[0] + " damage");
+                System.Diagnostics.Debug.WriteLine(c1.Name + " gave " + m1.Name + " " + damageList[1] + " damage");
+
                 healths.Add(healthMonster);
                 healths.Add(characterHealth);
+
                 if ((c1.Health - characterHealth) > 0)
                     await App.Database.UpdateCharacter(c1);
                 else
@@ -81,9 +109,16 @@ namespace DandD.Views
                     c1.Health = 0;
                     await App.Database.UpdateCharacter(c1);
                 }
-                BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
 
+                BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
+                System.Diagnostics.Debug.WriteLine("okay");
+
+
+
+                totalHP -= 10;
+                
             }
+            
 
         }
     }
