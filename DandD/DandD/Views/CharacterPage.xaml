@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DandD.Views.CharacterPage">
@@ -11,18 +11,8 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="Name" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
                 <Entry Text="{Binding Name}" Grid.Row="0" Grid.Column="1" />
-
-                <Label Text="Strength" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Label Text="4" Grid.Row="1" Grid.Column="1"/>
-
-                <Label Text="Dex" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Label Text="4" Grid.Row="2" Grid.Column="1"/>
-
-                <Label Text="Health" Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Label Text="100" Grid.Row="3" Grid.Column="1"/>
-
-                <Label Text="Level" Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-                <Label Text="1" Grid.Row="4" Grid.Column="1"/>
+                <Label Text="Level" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                <Label Text="1" Grid.Row="1" Grid.Column="1"/>
             </Grid>
             <Button Text="Save" HorizontalOptions="FillAndExpand" BackgroundColor="Blue" TextColor="White" Clicked="Save_Clicked" />
             <!--<Button Text="Cancel" HorizontalOptions="FillAndExpand" BackgroundColor="Red" TextColor="White" Clicked="Cancel_Clicked" />-->
