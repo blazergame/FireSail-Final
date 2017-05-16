@@ -63,11 +63,12 @@ namespace DandD.Views
         {
             int totalHP = 0;
             int i = 0;
+            int score = 0;
 
             healths.Clear();
 
             //Get total health of all characters
-            for (int k = 0; k < 4; k++)
+            for (int k = 0; k < c.Count; k++)
             {
                 var temp = c[k];
 
@@ -139,13 +140,19 @@ namespace DandD.Views
                 //  System.Threading.Thread.Sleep(100);
                 System.Diagnostics.Debug.WriteLine(totalHP);
                 totalHP -= c1.DamangeReceived;
+                score++;
             }
 
              //Need to do level up once monster has died
              //Get exp value from monster, add to c1.xp
              //Call c1.didLevelUp(). If return true, it has leveled up
              //c1.didLevelUp will automatically add random values to the level up stats
-             
+            
+            for(var _i = 0; _i < c.Count; _i++)
+            {
+                assignHighScore(c[_i],score);
+            }
+
             displayAlertWin();
 
         }
@@ -216,6 +223,14 @@ namespace DandD.Views
                 await App.Database.UpdateCharacter(characterHPReset[i]);
             }
 
+        }
+
+        async void assignHighScore(Character character, int _score)
+        {
+            Random rand = new Random();
+
+            character.HighScore = _score + rand.Next(1, 20);
+            await App.Database.UpdateCharacter(character);
         }
 
         private void equipItem()

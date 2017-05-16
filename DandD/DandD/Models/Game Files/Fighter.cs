@@ -29,6 +29,7 @@ namespace DandD.Models.Game_Files
 
         public string DmgHolder { get; set; }
 
+        public string concatHighScore { get { return "HighScore: " + HighScore; } }
 
         public int HighScore
         {

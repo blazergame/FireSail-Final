@@ -15,8 +15,15 @@ namespace DandD.Views
 		public HighScorePage ()
 		{
 			InitializeComponent ();
-		}
+         
+        }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
 
-	}
+            HighScoreView.ItemsSource = await App.Database.RetrieveCharacters();
+        }
+
+    }
 }
