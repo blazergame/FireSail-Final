@@ -87,6 +87,11 @@ namespace DandD
 			return database.DeleteAsync(character);
 		}
 
+        public Task<int> UpdateMonster(Monster monster)
+        {
+            return database.UpdateAsync(monster);
+        }
+
         public void reset()
         {
             database.ExecuteAsync("DELETE FROM Items");

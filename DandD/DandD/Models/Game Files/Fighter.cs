@@ -20,6 +20,7 @@ namespace DandD.Models.Game_Files
         string dmgHolder;
         List<Items> EquippedList;
         Random rand = new Random();
+        int highScore;
 
         public Fighter()
         {
@@ -27,6 +28,13 @@ namespace DandD.Models.Game_Files
         }
 
         public string DmgHolder { get; set; }
+
+
+        public int HighScore
+        {
+            get { return highScore; }
+            set { SetProperty(ref highScore, value); }
+        }
 
         public int DamangeReceived
         {

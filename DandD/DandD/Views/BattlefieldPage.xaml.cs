@@ -63,11 +63,13 @@ namespace DandD.Views
         {
             int totalHP = 0;
             int i = 0;
+
             healths.Clear();
 
-            for (int k = 0; k < c.Count; k++)
+            //Get total health of all characters
+            for (int k = 0; k < 4; k++)
             {
-                var temp = c[i];
+                var temp = c[k];
 
                 totalHP += temp.Health;
                 
@@ -89,7 +91,6 @@ namespace DandD.Views
                     m1 = m[i];
                     c1 = c[i];
                     i++;
-
                 }
 
                //Reset index once out of bound
@@ -113,6 +114,8 @@ namespace DandD.Views
                 healths.Add(healthMonster);
                 healths.Add(characterHealth);
 
+                //Update character health after each turn
+                //If health is below 0, set it to 0
                 if ((c1.Health - characterHealth) > 0)
                     await App.Database.UpdateCharacter(c1);
                 else
@@ -121,7 +124,9 @@ namespace DandD.Views
                     await App.Database.UpdateCharacter(c1);
                 }
 
-				if ((m1.Health - healthMonster) > 0)
+                //Update monster health after each turn
+                //If health is below 0, set it to 0
+                if ((m1.Health - healthMonster) > 0)
 					await App.Database.InsertMonster(m1);
 				else
 				{
@@ -131,9 +136,9 @@ namespace DandD.Views
 
                 MonsterDoingDamageView.ItemsSource = await App.Database.RetrieveMonsters();
                 CharacterDoingDamageView.ItemsSource = await App.Database.RetrieveCharacters();
-                System.Threading.Thread.Sleep(500);
+                //  System.Threading.Thread.Sleep(100);
+                System.Diagnostics.Debug.WriteLine(totalHP);
                 totalHP -= c1.DamangeReceived;
-                
             }
 
              //Need to do level up once monster has died
@@ -154,6 +159,9 @@ namespace DandD.Views
             {
                 //Push items drop page gained from battle page
                 //From that page, after clicking okay, should return to main menu
+                resetBattleFieldMonster();
+                resetBattleFieldCharacter();
+                await Navigation.PopAsync();
             }
 
             
@@ -166,15 +174,48 @@ namespace DandD.Views
 
             if(answer == true)
             {
-                resetBattleField();
+                resetBattleFieldMonster();
+                resetBattleFieldCharacter();
                 await Navigation.PopAsync();
             }
         }
 
-        async void resetBattleField()
+        async void displayAlertLost()
         {
-             App.Database.resetCharacter();
-             App.Database.resetMonster();
+            var answer = await DisplayAlert("Better Luck Next Time", "You have lost", "Ok", "Cancel");
+            System.Diagnostics.Debug.WriteLine("Answer: " + answer);
+
+            if (answer == true)
+            {
+                resetBattleFieldMonster();
+                resetBattleFieldCharacter();
+                await Navigation.PopAsync();
+            }
+        }
+
+        async void resetBattleFieldMonster()
+        {
+
+            var monsterHPReset = await App.Database.RetrieveMonsters();
+
+            for (var i = 0; i < monsterHPReset.Count; i++) {
+                monsterHPReset[i].Health = 100;
+                await App.Database.UpdateMonster(monsterHPReset[i]);
+            }
+
+        }
+
+        async void resetBattleFieldCharacter()
+        {
+
+            var characterHPReset = await App.Database.RetrieveCharacters();
+
+            for (var i = 0; i < characterHPReset.Count; i++)
+            {
+                characterHPReset[i].Health = 100;
+                await App.Database.UpdateCharacter(characterHPReset[i]);
+            }
+
         }
 
         private void equipItem()

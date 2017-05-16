@@ -42,5 +42,10 @@ namespace DandD
             await Navigation.PushAsync(new BattlefieldPage());
         }
 
+        async void HighScore_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new HighScorePage());
+        }
+
     }
 }
