@@ -43,7 +43,7 @@ namespace DandD.Views
 		private int Randomize()
 		{
 			Random rand = new Random();
-			return rand.Next(1, 10);
+			return rand.Next(5, 12);
 		}
 
 		private string PopulateAndReturnNames()
