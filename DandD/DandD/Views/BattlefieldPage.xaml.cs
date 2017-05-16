@@ -28,6 +28,12 @@ namespace DandD.Views
 		{
             this.Title = "Battle";
             InitializeComponent();
+
+            surrenderButton.Clicked += async (s, e) =>
+            {
+                displayAlertSurrender();
+                
+            };
         }
 
         protected async override void OnAppearing()
@@ -76,6 +82,8 @@ namespace DandD.Views
                 var m1 = m[i];
                 var c1 = c[i];
 
+
+                //Check bounds of character index
                 if (i+1 <= c.Count) {
                     m1 = m[i];
                     c1 = c[i];
@@ -83,6 +91,7 @@ namespace DandD.Views
 
                 }
 
+               //Reset index once out of bound
                 if (i >= c.Count)
                     i = 0;
 
@@ -121,12 +130,44 @@ namespace DandD.Views
 
                 MonsterDoingDamageView.ItemsSource = await App.Database.RetrieveMonsters();
                 CharacterDoingDamageView.ItemsSource = await App.Database.RetrieveCharacters();
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(900);
                 totalHP -= c1.DamangeReceived;
                 
             }
+            displayAlertWin();
 
+        }
 
+        async void displayAlertWin()
+        {
+            var answer = await DisplayAlert("Congrats!!","You have won","Ok","Cancel");
+            System.Diagnostics.Debug.WriteLine("Answer: " + answer);
+
+            if(answer == true)
+            {
+                //Push items gained from battle page
+                //From that page, after clicking okay, should return to main menu
+            }
+
+            
+        }
+
+        async void displayAlertSurrender()
+        {
+            var answer = await DisplayAlert("Surrendered!", "You have lost", "Ok", "Cancel");
+            System.Diagnostics.Debug.WriteLine("Answer: " + answer);
+
+            if(answer == true)
+            {
+                resetBattleField();
+                await Navigation.PopAsync();
+            }
+        }
+
+        async void resetBattleField()
+        {
+             App.Database.resetCharacter();
+             App.Database.resetMonster();
         }
     }
 }

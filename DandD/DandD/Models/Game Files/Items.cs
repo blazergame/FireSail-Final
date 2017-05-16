@@ -78,9 +78,9 @@ namespace DandD.Models.Game_Files
 
         private string PopulateAndReturnNames()
         {
-           
-            var words = new[] { "Leroy Jenkins", "Warlock", "Qui-gone-drank-the-gin","The_Chosen_One", "Anakin", "Frank", "Jake from Statefarm", "Flo", "Donald Drumpf",
-            "Father Sunborg", "Mitt Romney", "Barrack Yo-Momma The 3rd", "Carl", "O_O", "THE_MARINERS_SUCK_AT_BASEBALL" };
+
+            var words = new[] { "Leroy Jenkins", "Warlock", "Qui-gone-drank-the-gin","The_Chosen_One", "Anakin", "Snake", "Jake from Statefarm", "Flo", "Donald Drumpf",
+            "Fur Rat", "Barrack Yo-Momma The 3rd", "Carl","Slime" };
             return words[rand.Next(0, words.Length)];
         }
     }

@@ -28,6 +28,7 @@ namespace DandD.Models.Game_Files
 			return false;
 		}
 
+        public string concat { get { return "Monster HP: " + Health; } }
 
     }
 }

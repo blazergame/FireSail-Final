@@ -7,17 +7,20 @@
         <ListView x:Name="MonsterDoingDamageView" HorizontalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding DmgHolder}" Detail="{Binding Health}" />
+                    <TextCell Text="{Binding DmgHolder}" Detail="{Binding concat}" />
                 </DataTemplate>
             </ListView.ItemTemplate>    
         </ListView>
         <ListView x:Name="CharacterDoingDamageView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding DmgHolder}" Detail="{Binding Health}" />
+                    <TextCell Text="{Binding DmgHolder}" Detail="{Binding concat}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+            <Button x:Name="surrenderButton" Text="Surrender" />
+
         </StackLayout>    
     </ContentPage.Content>
 </ContentPage>
