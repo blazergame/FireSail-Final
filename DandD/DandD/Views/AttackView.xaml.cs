@@ -20,7 +20,7 @@ namespace DandD.Views
 
         public string Concat(Character c1, Monster m1, int val)
         {
-            return damageView = c1.Name + " Attacked " + c1.Name + " for " + val;
+            return damageView = c1.Name + " Attacked " + m1.Name + " for " + val;
 
         }
     }

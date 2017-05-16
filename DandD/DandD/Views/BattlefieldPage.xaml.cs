@@ -28,8 +28,6 @@ namespace DandD.Views
 		{
             this.Title = "Battle";
             InitializeComponent();
-
-
         }
 
         protected async override void OnAppearing()
@@ -98,24 +96,32 @@ namespace DandD.Views
                 c1.DamangeReceived = damageList[1];
 
 
-                for (int f = 0; f < 10; f++)
+                m1.DmgHolder = display.Concat(m1,c1, damageList[0]);
+                c1.DmgHolder = display.Concat(c1, m1, damageList[1]);
+				
+
+                healths.Add(healthMonster);
+                healths.Add(characterHealth);
+
+                if ((c1.Health - characterHealth) > 0)
+                    await App.Database.UpdateCharacter(c1);
+                else
                 {
-                    m1.DmgHolder = display.Concat(m1, c1, f);
-                    c1.DmgHolder = display.Concat(m1, c1, f + 1);
-                    System.Threading.Thread.Sleep(1000);
-
-                    healths.Add(healthMonster);
-                    healths.Add(characterHealth);
-
-                    if ((c1.Health - characterHealth) > 0)
-                        await App.Database.UpdateCharacter(c1);
-                    else
-                    {
-                        c1.Health = 0;
-                        await App.Database.UpdateCharacter(c1);
-                    }
-                    BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
+                    c1.Health = 0;
+                    await App.Database.UpdateCharacter(c1);
                 }
+
+				if ((m1.Health - healthMonster) > 0)
+					await App.Database.InsertMonster(m1);
+				else
+				{
+					m1.Health = 0;
+					await App.Database.InsertMonster(m1);
+				}
+
+                MonsterDoingDamageView.ItemsSource = await App.Database.RetrieveMonsters();
+                CharacterDoingDamageView.ItemsSource = await App.Database.RetrieveCharacters();
+                System.Threading.Thread.Sleep(1000);
                 totalHP -= c1.DamangeReceived;
                 
             }

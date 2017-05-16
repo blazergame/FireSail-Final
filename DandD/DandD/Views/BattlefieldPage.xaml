@@ -3,12 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DandD.Views.BattlefieldPage">
     <ContentPage.Content>
-        <ListView x:Name="BattleListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout>
+        <ListView x:Name="MonsterDoingDamageView" HorizontalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding DmgHolder}" Detail="{Binding Health}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>    
+        </ListView>
+        <ListView x:Name="CharacterDoingDamageView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding DmgHolder}" Detail="{Binding Health}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </StackLayout>    
     </ContentPage.Content>
 </ContentPage>
