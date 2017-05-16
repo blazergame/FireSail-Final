@@ -47,6 +47,7 @@ namespace DandD.Views
             //Uncomment if you want to add another monster into db
             await App.Database.InsertMonster(m);
             await Navigation.PushAsync(new MonsterPage());
+            await Navigation.PopAsync();
         }
         async void Monster_MonsterSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
