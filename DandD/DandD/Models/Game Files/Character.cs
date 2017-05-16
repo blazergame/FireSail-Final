@@ -11,6 +11,7 @@ namespace DandD.Models.Game_Files
         public int Character_ID { get; set; }
         public int score { get; set; }
        
+       
         public Character(string Name)
         {
             this.Name = Name;

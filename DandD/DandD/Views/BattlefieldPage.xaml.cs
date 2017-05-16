@@ -15,6 +15,7 @@ namespace DandD.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BattlefieldPage : ContentPage
 	{
+        public AttackView display = new AttackView(); 
         public int healthMonster;
         public int characterHealth;
         public List<int> damageList = new List<int>();
@@ -96,29 +97,29 @@ namespace DandD.Views
                 m1.DamangeReceived = damageList[0];
                 c1.DamangeReceived = damageList[1];
 
-                System.Diagnostics.Debug.WriteLine(m1.Name + " gave " + c1.Name + " " + damageList[0] + " damage");
-                System.Diagnostics.Debug.WriteLine(c1.Name + " gave " + m1.Name + " " + damageList[1] + " damage");
 
-                healths.Add(healthMonster);
-                healths.Add(characterHealth);
-
-                if ((c1.Health - characterHealth) > 0)
-                    await App.Database.UpdateCharacter(c1);
-                else
+                for (int f = 0; f < 10; f++)
                 {
-                    c1.Health = 0;
-                    await App.Database.UpdateCharacter(c1);
+                    m1.DmgHolder = display.Concat(m1, c1, f);
+                    c1.DmgHolder = display.Concat(m1, c1, f + 1);
+                    System.Threading.Thread.Sleep(1000);
+
+                    healths.Add(healthMonster);
+                    healths.Add(characterHealth);
+
+                    if ((c1.Health - characterHealth) > 0)
+                        await App.Database.UpdateCharacter(c1);
+                    else
+                    {
+                        c1.Health = 0;
+                        await App.Database.UpdateCharacter(c1);
+                    }
+                    BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
                 }
-
-                BattleListView.ItemsSource = await App.Database.RetrieveCharacters();
-                System.Diagnostics.Debug.WriteLine("okay");
-
-
-
-                totalHP -= 10;
+                totalHP -= c1.DamangeReceived;
                 
             }
-            
+
 
         }
     }

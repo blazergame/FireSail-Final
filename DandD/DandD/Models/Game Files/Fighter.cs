@@ -17,7 +17,7 @@ namespace DandD.Models.Game_Files
         int xp;
         int level = 1;
         int damageReceived;
-
+        string dmgHolder;
         List<Items> EquippedList;
 
         public Fighter()
@@ -25,6 +25,7 @@ namespace DandD.Models.Game_Files
 
         }
 
+        public string DmgHolder { get; set; }
 
         public int DamangeReceived
         {
