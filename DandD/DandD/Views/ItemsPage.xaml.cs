@@ -22,24 +22,32 @@ namespace DandD.Views
             listButton.Clicked += async (s, e) =>
             {
                 await getAPI();
+                await Navigation.PushAsync(new ItemPage());
+                await Navigation.PopAsync();
 
             };
 
             listButton2.Clicked += async (s, e) =>
             {
                 await getAPI2();
+                await Navigation.PushAsync(new ItemPage());
+                await Navigation.PopAsync();
 
             };
 
             listButton3.Clicked += async (s, e) =>
             {
                 await getAPI3();
+                await Navigation.PushAsync(new ItemPage());
+                await Navigation.PopAsync();
 
             };
 
             reset.Clicked += async (s, e) =>
             {
                 App.Database.reset();
+                await Navigation.PushAsync(new ItemPage());
+                await Navigation.PopAsync();
             };
         }
 
@@ -75,6 +83,7 @@ namespace DandD.Views
                 api.Value = results.data[i].Value;
 
                 await App.Database.InsertItem(api);
+
             }
 
             return data;
@@ -112,6 +121,7 @@ namespace DandD.Views
                 api.Value = results.data[i].Value;
 
                 await App.Database.InsertItem(api);
+
             }
 
             return data;
@@ -145,6 +155,7 @@ namespace DandD.Views
                 api.Value = results.data[i].Value;
 
                 await App.Database.InsertItem(api);
+
             }
 
 

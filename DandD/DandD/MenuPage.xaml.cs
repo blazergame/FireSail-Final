@@ -17,6 +17,7 @@ namespace DandD
 		public MenuPage ()
 		{
 			InitializeComponent();
+            this.Title = "Dungeons & Copyright Issues";
 		}
 
         async void Character_Clicked(object sender, System.EventArgs e)
