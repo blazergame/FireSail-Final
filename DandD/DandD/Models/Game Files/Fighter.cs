@@ -120,13 +120,13 @@ namespace DandD.Models.Game_Files
 
         public bool didLevelUp()
         {
-           if(xp > 100)
+           if(xp > 50)
             {
                 level++;
                 Str += rand.Next(1, 10);
                 Dex += rand.Next(1, 10);
                 Speed += rand.Next(1, 5);
-
+                xp = 0;
                 return true;
             }
 
