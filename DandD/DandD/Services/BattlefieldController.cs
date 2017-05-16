@@ -49,14 +49,14 @@ namespace DandD.Services
 
         private int damageCharacter(ref Monster m1, ref Character c1)
         {
-            int damage = (m1.Str * rand.Next(1, 6) - rand.Next(1,3));
+            int damage = (m1.Str * rand.Next(1, 3));
             c1.Health -= damage;
             return damage; 
         }
 
         private int damageMonster(ref Monster m1, ref Character c1)
         {
-            int damage = (c1.Str * rand.Next(1,6) - rand.Next(1,3));
+            int damage = (c1.Str * rand.Next(1,3));
             m1.Health -= damage;
             return damage;
         }

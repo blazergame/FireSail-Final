@@ -75,6 +75,8 @@ namespace DandD.Views
 
             System.Diagnostics.Debug.WriteLine(totalHP);
 
+            equipItem();
+
             while (totalHP > 0)
             {
 
@@ -130,7 +132,7 @@ namespace DandD.Views
 
                 MonsterDoingDamageView.ItemsSource = await App.Database.RetrieveMonsters();
                 CharacterDoingDamageView.ItemsSource = await App.Database.RetrieveCharacters();
-                System.Threading.Thread.Sleep(900);
+                System.Threading.Thread.Sleep(500);
                 totalHP -= c1.DamangeReceived;
                 
             }
@@ -145,7 +147,7 @@ namespace DandD.Views
 
             if(answer == true)
             {
-                //Push items gained from battle page
+                //Push items drop page gained from battle page
                 //From that page, after clicking okay, should return to main menu
             }
 
@@ -168,6 +170,14 @@ namespace DandD.Views
         {
              App.Database.resetCharacter();
              App.Database.resetMonster();
+        }
+
+        private void equipItem()
+        {
+            var listOfItem = App.Database.RetrieveItems();
+
+
+            System.Diagnostics.Debug.WriteLine(listOfItem);
         }
     }
 }
