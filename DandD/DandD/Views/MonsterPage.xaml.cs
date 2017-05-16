@@ -13,8 +13,7 @@ namespace DandD.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MonsterPage : ContentPage
 	{
-        int monster_count = 1;
-
+        private Random rand = new Random();
         public MonsterPage ()
 		{
             this.Title = "Monster List";
@@ -33,15 +32,18 @@ namespace DandD.Views
         async void AddMonster_Clicked(object sender, System.EventArgs e)
         {
             Monster m = new Monster();
-            m.Name = "Monster" + monster_count;
-            m.Str = 5;
-            m.Dex = 5;
-            m.Speed = 10;
+            m.Name = PopulateAndReturnNames();
+            System.Threading.Thread.Sleep(10);
+            m.Str = Randomize();
+			System.Threading.Thread.Sleep(10);
+            m.Dex = Randomize();
+			System.Threading.Thread.Sleep(10);
+            m.Speed = Randomize();
+            System.Threading.Thread.Sleep(10);
             m.Health = 100;
             m.Level = 1;
+            m.Xp = Randomize();
 
-            monster_count = monster_count + 1;
-            System.Diagnostics.Debug.WriteLine(monster_count);
             //Uncomment if you want to add another monster into db
             await App.Database.InsertMonster(m);
         }
@@ -52,5 +54,20 @@ namespace DandD.Views
                 await Navigation.PushAsync(new MonsterDetail { BindingContext = e.SelectedItem as Monster });
             }
         }
+
+
+		private int Randomize()
+		{
+			Random rand = new Random();
+			return rand.Next(1, 10);
+		}
+
+		private string PopulateAndReturnNames()
+		{
+
+			var words = new[] { "Leroy Jenkins", "Warlock", "Qui-gone-drank-the-gin","The_Chosen_One", "Anakin", "Frank", "Jake from Statefarm", "Flo", "Donald Drumpf",
+			"Father Sunborg", "Mitt Romney", "Barrack Yo-Momma The 3rd", "Carl", "O_O", "THE_MARINERS_SUCK_AT_BASEBALL" };
+			return words[rand.Next(0, words.Length)];
+		}
     }
 }

@@ -47,7 +47,7 @@ namespace DandD.Views
         {
             App.Database.reset();
             var client = new System.Net.Http.HttpClient();
-            client.BaseAddress = new Uri("http://thursdayhomework.azurewebsites.net/");
+            client.BaseAddress = new Uri("https://thursdayhomework.azurewebsites.net/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -84,7 +84,7 @@ namespace DandD.Views
         {
             App.Database.reset();
             var client = new System.Net.Http.HttpClient();
-            client.BaseAddress = new Uri("http://thursdayhomework.azurewebsites.net/");
+            client.BaseAddress = new Uri("https://thursdayhomework.azurewebsites.net/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -121,7 +121,7 @@ namespace DandD.Views
         {
             App.Database.reset();
             var client = new System.Net.Http.HttpClient();
-            client.BaseAddress = new Uri("http://thursdayhomework.azurewebsites.net/");
+            client.BaseAddress = new Uri("https://thursdayhomework.azurewebsites.net/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var response = await client.GetAsync("API/GetItemList/3");
