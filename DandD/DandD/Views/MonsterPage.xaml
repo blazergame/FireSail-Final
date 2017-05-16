@@ -6,12 +6,16 @@
         <ToolbarItem Text="ADD" Clicked="AddMonster_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView x:Name="MonsterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemSelected="Monster_MonsterSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
+        <StackLayout>
+            <Button x:Name="reset" Text="Reset" />
+            <ListView x:Name="MonsterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemSelected="Monster_MonsterSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -28,6 +28,7 @@ namespace DandD.Views
             this.Title = "Battle";
             InitializeComponent();
 
+
         }
 
         protected async override void OnAppearing()
@@ -42,11 +43,13 @@ namespace DandD.Views
             for (var i = 0; i < c.Count; i++)
             {
                 ge.AddCharacter(c[i]);
+                System.Diagnostics.Debug.WriteLine(c[i]);
             }
             
             for(var i = 0; i < m.Count; i++)
             {
                 ge.AddMonster(m[i]);
+                System.Diagnostics.Debug.WriteLine(m[i]);
             }
             playGame();
 

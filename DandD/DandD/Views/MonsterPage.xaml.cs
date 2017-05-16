@@ -19,7 +19,14 @@ namespace DandD.Views
             this.Title = "Monster List";
 
             InitializeComponent();
-		}
+
+            reset.Clicked += async (s, e) =>
+            {
+                App.Database.resetMonster();
+                await Navigation.PushAsync(new MonsterPage());
+                await Navigation.PopAsync();
+            };
+        }
 
 
         protected async override void OnAppearing()

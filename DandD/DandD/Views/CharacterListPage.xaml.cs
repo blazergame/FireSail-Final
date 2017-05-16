@@ -15,6 +15,13 @@ namespace DandD.Views
         {
             this.Title = "Character List";
             InitializeComponent();
+
+            reset.Clicked += async (s, e) =>
+            {
+                App.Database.resetCharacter();
+                await Navigation.PushAsync(new CharacterListPage());
+                await Navigation.PopAsync();
+            };
         }
 
         protected async override void OnAppearing()

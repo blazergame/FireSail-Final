@@ -16,7 +16,9 @@ namespace DandD.Views
 		public CharacterDetail ()
 		{
 			InitializeComponent ();
-		}
+
+
+        }
 
         async void Add_Clicked(object sender, System.EventArgs e)
         {

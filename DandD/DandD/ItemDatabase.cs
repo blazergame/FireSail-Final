@@ -91,5 +91,15 @@ namespace DandD
         {
             database.ExecuteAsync("DELETE FROM Items");
         }
+
+        public void resetMonster()
+        {
+            database.ExecuteAsync("DELETE FROM Monster");
+        }
+
+        public void resetCharacter()
+        {
+            database.ExecuteAsync("DELETE FROM Character");
+        }
     }
 }

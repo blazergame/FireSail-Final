@@ -3,16 +3,19 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddCharacter_Clicked"/>
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="reset" Text="Reset" />
+      
+        
         <ListView x:Name="CharacterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemSelected="Character_CharacterSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
-                <!--<TextCell Text="{Binding Str}" />-->
-                <!--<TextCell Text="{Binding Dex}"/>
-                <TextCell Text="{Binding Health}" />-->
+                    <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
