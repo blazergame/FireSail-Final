@@ -19,6 +19,7 @@ namespace DandD.Models.Game_Files
         int damageReceived;
         string dmgHolder;
         List<Items> EquippedList;
+        Random rand = new Random();
 
         public Fighter()
         {
@@ -108,11 +109,15 @@ namespace DandD.Models.Game_Files
             return EquippedList;
         }
 
-        public bool didLevelUp(int exp)
+        public bool didLevelUp()
         {
-           if(exp > 100)
+           if(xp > 100)
             {
                 level++;
+                Str += rand.Next(1, 10);
+                Dex += rand.Next(1, 10);
+                Speed += rand.Next(1, 5);
+
                 return true;
             }
 

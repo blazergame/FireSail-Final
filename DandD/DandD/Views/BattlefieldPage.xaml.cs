@@ -75,7 +75,6 @@ namespace DandD.Views
 
             System.Diagnostics.Debug.WriteLine(totalHP);
 
-            equipItem();
 
             while (totalHP > 0)
             {
@@ -136,6 +135,12 @@ namespace DandD.Views
                 totalHP -= c1.DamangeReceived;
                 
             }
+
+             //Need to do level up once monster has died
+             //Get exp value from monster, add to c1.xp
+             //Call c1.didLevelUp(). If return true, it has leveled up
+             //c1.didLevelUp will automatically add random values to the level up stats
+             
             displayAlertWin();
 
         }
