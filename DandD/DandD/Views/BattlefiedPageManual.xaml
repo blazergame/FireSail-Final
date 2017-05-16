@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DandD.Views.BattlefiedPageManual">
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="MonsterDoingDamageView" HorizontalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DmgHolder}" Detail="{Binding concat}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="CharacterDoingDamageView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DmgHolder}" Detail="{Binding concat}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="surrenderButton" Text="Surrender" />
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

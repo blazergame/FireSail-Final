@@ -660,5 +660,6 @@ C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\asse
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattlefiedPageManual.xaml.g.cs
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.dll.mdb
