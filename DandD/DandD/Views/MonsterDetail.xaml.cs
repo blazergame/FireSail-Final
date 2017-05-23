@@ -16,6 +16,7 @@ namespace DandD.Views
 		public MonsterDetail ()
 		{
 			InitializeComponent ();
+            this.Title = "Monster Details";
 		}
 
         async void Update_Clicked(object sender, System.EventArgs e)

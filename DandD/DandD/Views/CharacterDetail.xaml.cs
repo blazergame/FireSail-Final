@@ -16,6 +16,7 @@ namespace DandD.Views
 		public CharacterDetail ()
 		{
 			InitializeComponent ();
+            this.Title = "Character Details";
 
 
         }

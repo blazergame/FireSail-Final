@@ -12,12 +12,9 @@ namespace DandD.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-
-
+        Label label;
         public SettingsPage()
         {
-            InitializeComponent();
-
             Label debuglabel = new Label
             {
                 Text = "Debug Mode is On: False",
@@ -342,9 +339,10 @@ namespace DandD.Views
                     battle_events_switcher,
                     battle_events_label
                 }
-            };
+            };*/
 
-            */
+
         }
     }
 }
+ 

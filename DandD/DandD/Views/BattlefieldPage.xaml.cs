@@ -151,7 +151,9 @@ namespace DandD.Views
                 totalHP -= c1.DamangeReceived;
 
                 //Assign score to user
-                score+= rand.Next(1,10);
+                score += c[i].Str;
+                score += c[i].Dex;
+                
                 assignHighScore(c[i], score);
 
 
@@ -238,9 +240,7 @@ namespace DandD.Views
 
         async void assignHighScore(Character character, int _score)
         {
-            Random rand = new Random();
-
-            character.HighScore = _score + rand.Next(1, 20);
+            character.HighScore = _score;
             await App.Database.UpdateCharacter(character);
         }
         async private void equipItem()

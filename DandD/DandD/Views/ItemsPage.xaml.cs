@@ -2,7 +2,8 @@
 
 using DandD.Models;
 using DandD.ViewModels;
-
+using System.Collections.Specialized;
+using System.Net;
 using Xamarin.Forms;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
@@ -162,7 +163,21 @@ namespace DandD.Views
             return data;
         }
 
-        protected async override void OnAppearing()
+        public void postmethod()
+        {
+            using (WebClient client = new WebClient())
+            {
+                byte[] response =
+                   client.UploadValues("http://dork.com/service", new NameValueCollection()
+                      {
+                       { "0", "Cosby" },
+                       { "favorite+flavor", "flies" }
+                      });
+
+                string result = System.Text.Encoding.UTF8.GetString(response);
+            }
+        }
+protected async override void OnAppearing()
         {
             base.OnAppearing();
             ApiListView.ItemsSource = await App.Database.RetrieveItems();

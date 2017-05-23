@@ -50,7 +50,7 @@ namespace DandD
                     {
                         Title = "Settings",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
-                    },
+                    }
                     //new NavigationPage(new CharacterPage())
                     //{
                     //    Title = "Character",

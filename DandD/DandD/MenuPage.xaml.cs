@@ -17,7 +17,7 @@ namespace DandD
 		public MenuPage ()
 		{
 			InitializeComponent();
-            this.Title = "Dungeons & Copyright Issues";
+            this.Title = "Dungeons and Copyright Issues";
 		}
 
         async void Character_Clicked(object sender, System.EventArgs e)
@@ -43,10 +43,18 @@ namespace DandD
             await Navigation.PushAsync(new BattlefieldPage());
         }
 
+        async void PlayGameManuel_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new BattlefiedPageManual());
+        }
+
         async void HighScore_Clicked(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new HighScorePage());
         }
-
+        async void APIPost_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new PostForm());
+        }
     }
 }

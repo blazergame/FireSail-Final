@@ -11,7 +11,7 @@
             <Button Text="Monsters" Clicked="Monster_Clicked" />
             <Button Text="Items" Clicked="Items_Clicked" />
             <Button Text="Play Game" Clicked="PlayGame_Clicked" />
-            <Button Text="High Score" Clicked="HighScore_Clicked" />
+            <Button Text="POST Request" Clicked="APIPost_Clicked" />
         </StackLayout>
     </ContentPage.Content>
     
