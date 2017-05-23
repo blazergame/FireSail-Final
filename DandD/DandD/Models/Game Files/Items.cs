@@ -6,12 +6,18 @@ namespace DandD.Models.Game_Files
 {
     public class Items: BaseDataObject
     {
+        public IFileUtility Picture { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public string Bodyparty { get; set; }
+        public int Useage { get; set; }
+        public string Creator { get; set; }
         public int Str { get; set; }
         public int Dex { get; set; }
         public int Speed { get; set; }
         public int Health { get; set; }
         public bool Equipped { get; set; }
+     
         private int defaultHealth = 10;
         private Random rand = new Random();
 
