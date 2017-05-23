@@ -22,43 +22,24 @@ namespace DandD.Views
 
             postButton.Clicked += async (s, e) =>
             {
-                var randomText = randomEntry.Text;
-                var characterClass = characterType.Text;
-                var level = levelEntry.Text;
-
-                if (randomText != "1")
-                    randomText = "0";
-
-                if (characterClass == "Fighter" || characterClass == "Cleric" || characterClass == "Thief")
-                {
-                    if (int.Parse(level) < 0)
-                    {
-                        await DisplayAlert("Invalid input", "Please make level greater than 0", "Ok");
-                        return;
-                    }
-                    await PostRequest(randomText, characterClass, level);
-
-                }
-                else
-                {
-                    await DisplayAlert("Invalid input", "Only Fighter,Cleric or Thief class", "Ok");
-                    return;
-                }
+                var randomText = randomItemOption.Text;
+                var characterClass = superItemOption.Text;
+                await PostRequest(randomText, characterClass);
 
             };
 
         }
 
 
-        public async Task<string> PostRequest(string rand, string character, string _level)
+        public async Task<string> PostRequest(string val1, string val2)
         {
             App.Database.reset();
-            string URL = "http://thursdayhomeworkpost.azurewebsites.net/api/GetItems";
+            string URL = "https://gamehackathon.azurewebsites.net/api/GetItemsList";
             var client = new System.Net.Http.HttpClient();
             var formContent = new FormUrlEncodedContent(new[] {
-                new KeyValuePair<string, string>("random", rand),
-                new KeyValuePair<string, string>("charactertype", character),
-                new KeyValuePair<string, string>("characterlevel", _level),
+                new KeyValuePair<string, string>("randomItemOption", val1),
+                new KeyValuePair<string, string>("superItemOption", val2),
+               
             });
 
 
@@ -67,6 +48,7 @@ namespace DandD.Views
             var json = response.Content.ReadAsStringAsync().Result;
 
             dynamic results = JsonConvert.DeserializeObject<dynamic>(json);
+
 
             var data = string.Empty;
             for (var i = 0; i < results.data.Count; i++)
@@ -78,8 +60,13 @@ namespace DandD.Views
                 api.Error_Code = results.error_code;
                 api.Msg = results.msg;
                 api.Name = results.data[i].Name;
+                api.FilePath = results.data[i].FilePath;
                 api.Attribute = results.data[i].Attribute;
                 api.Value = results.data[i].Value;
+                api.Description = results[i].Description;
+                api.BodyPart = results[i].BodyPart;
+                api.Useage = results[i].Useage;
+                api.Creator = results[i].Creator;
 
                 await App.Database.InsertItem(api);
             }
