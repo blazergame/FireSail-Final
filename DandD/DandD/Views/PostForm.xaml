@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DandD.Views.PostForm">
+
+    <StackLayout>
+        <Entry x:Name="randomEntry"  Text="0" />
+        <Entry x:Name="characterType"  Text="Thief" />
+        <Entry x:Name="levelEntry" Text="1" />
+        <Button x:Name="postButton" Text="Get Items" />
+
+
+        <ListView x:Name="ApiListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding concat}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

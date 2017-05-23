@@ -15,6 +15,7 @@ namespace DandD.Views
 		public HighScorePage ()
 		{
 			InitializeComponent ();
+            this.Title = "High Scores";
          
         }
 
