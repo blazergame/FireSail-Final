@@ -243,7 +243,6 @@ namespace DandD.Views
             character.HighScore = _score;
             await App.Database.UpdateCharacter(character);
         }
-
         async private void equipItem()
         {
             System.Diagnostics.Debug.WriteLine("Inside equipItem");
@@ -265,7 +264,7 @@ namespace DandD.Views
                 for (int j = 0; j < c.Count; j++)
                 {
                     System.Diagnostics.Debug.WriteLine(c[j].Health);
-                    if (c[j].Health >= 0)
+                    if (c[j].Health > 0)
                     {
                         System.Diagnostics.Debug.WriteLine("Inside IF characterHP < 0");
                         //Transfer attributes from items to character : EQUIP ITEM logic
