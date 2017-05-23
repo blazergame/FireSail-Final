@@ -563,7 +563,6 @@ C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamar
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.HighScorePage.xaml.g.cs
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattlefiedPageManual.xaml.g.cs
-C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.dll
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.pdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\bin\Debug\com.companyname.DandD.apk
@@ -665,3 +664,7 @@ C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\asse
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.csprojResolveAssemblyReference.cache
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.PostForm.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.SettingsPage.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.PostForm.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.SettingsPage.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.dll.mdb
