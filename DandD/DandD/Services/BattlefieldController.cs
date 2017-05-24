@@ -21,9 +21,12 @@ namespace DandD.Services
             //Monster goes first
             if (first == 1)
             {
-                for (int i = 0; i < m1.EquippedList.Count; i++)
+                if (m1.EquippedList != null)
                 {
-                   m1.EquippedList[i].Usage--;
+                    for (int i = 0; i < m1.EquippedList.Count; i++)
+                    {
+                        m1.EquippedList[i].Usage--;
+                    }
                 }
                 int localDmg = damageCharacter(ref m1,  ref c1);
                 int localDmg2 = damageMonster(ref m1, ref c1);
@@ -37,9 +40,12 @@ namespace DandD.Services
             else
             {
                 //Character goes first
-                for (int i = 0; i < c1.EquippedList.Count; i++)
+                if (c1.EquippedList != null)
                 {
-                    c1.EquippedList[i].Usage--;
+                    for (int i = 0; i < c1.EquippedList.Count; i++)
+                    {
+                        c1.EquippedList[i].Usage--;
+                    }
                 }
                 int localDmg = damageMonster(ref m1, ref c1);
                 int localDmg2 = damageCharacter(ref m1, ref c1);

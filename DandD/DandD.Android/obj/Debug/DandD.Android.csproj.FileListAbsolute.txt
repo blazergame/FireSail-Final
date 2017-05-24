@@ -563,6 +563,9 @@ C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamar
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.HighScorePage.xaml.g.cs
 C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattlefiedPageManual.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.PostForm.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.SettingsPage.xaml.g.cs
+C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.dll
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\bin\Debug\DandD.Android.pdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\bin\Debug\com.companyname.DandD.apk
@@ -630,6 +633,9 @@ C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.ItemDetailPage.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.NewItemPage.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.AttackView.xaml.g.cs
+C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.SplashPage.xaml.g.cs
+C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattleEffectsPost.xaml.g.cs
+C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattleEffect.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.MonsterPage.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.CharacterPage.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattlefieldPage.xaml.g.cs
@@ -640,6 +646,8 @@ C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.MonsterDetail.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.HighScorePage.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.BattlefiedPageManual.xaml.g.cs
+C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.PostForm.xaml.g.cs
+C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.SettingsPage.xaml.g.cs
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.pdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\bin\com.companyname.DandD.apk
@@ -661,10 +669,3 @@ C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\asse
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.csprojResolveAssemblyReference.cache
-C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.PostForm.xaml.g.cs
-C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.SettingsPage.xaml.g.cs
-C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.PostForm.xaml.g.cs
-C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.Views.SettingsPage.xaml.g.cs
-C:\Users\lij12\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Android.dll.mdb
-C:\Users\dhruv\Desktop\FireSail-Final\DandD\DandD.Android\obj\Debug\DandD.Droid.SplashPage.xaml.g.cs
