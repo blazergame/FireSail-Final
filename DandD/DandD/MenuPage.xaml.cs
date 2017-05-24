@@ -56,5 +56,9 @@ namespace DandD
         {
             await Navigation.PushAsync(new PostForm());
         }
+        async void BattleEffect_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new BattleEffect());
+        }
     }
 }
