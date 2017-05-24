@@ -50,28 +50,24 @@ namespace DandD.Views
             dynamic results = JsonConvert.DeserializeObject<dynamic>(json);
 
 
-            var data = string.Empty;
+            var temp = string.Empty;
             for (var i = 0; i < results.data.Count; i++)
             {
-                data = results.data[i].Name;
+                
                 Items api = new Items();
-                if (results.msg != "OK" && results.error_code != 0)
-                    break;
-                api.Error_Code = results.error_code;
-                api.Msg = results.msg;
                 api.Name = results.data[i].Name;
                 api.FilePath = results.data[i].FilePath;
                 api.Attribute = results.data[i].Attribute;
                 api.Value = results.data[i].Value;
                 api.Description = results[i].Description;
                 api.BodyPart = results[i].BodyPart;
-                api.Useage = results[i].Useage;
+                api.Useage = results[i].Useage.ToInt32();
                 api.Creator = results[i].Creator;
 
                 await App.Database.InsertItem(api);
             }
 
-            return data;
+            return temp;
         }
 
         protected async override void OnAppearing()
