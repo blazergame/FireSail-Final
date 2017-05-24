@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DandD.Views;
 
 namespace DandD.Services
 {
-    public class BattlefieldController
+    public class BattlefieldController : SettingsPage
     {
 
         private Random rand = new Random();
@@ -49,15 +50,35 @@ namespace DandD.Services
 
         private int damageCharacter(ref Monster m1, ref Character c1)
         {
-            int damage = (m1.Str * rand.Next(1, 5));
-            c1.Health -= damage;
+            int damage = 0; 
+            if (critical_hit_bool)
+            {
+                damage = 2 * (m1.Str * rand.Next(1, 5));
+                c1.Health -= damage;
+            }
+            else
+            {
+                damage = (m1.Str * rand.Next(1, 5));
+                c1.Health -= damage;
+            }
+
             return damage; 
         }
 
         private int damageMonster(ref Monster m1, ref Character c1)
         {
-            int damage = (c1.Str * rand.Next(1,5));
-            m1.Health -= damage;
+            int damage = 0;
+            if (critical_hit_bool)
+            {
+                damage = 2 * (c1.Str * rand.Next(1, 5));
+                m1.Health -= damage;
+            }
+
+            else
+            {
+                damage = (c1.Str * rand.Next(1, 5));
+                m1.Health -= damage;
+            }
             return damage;
         }
 

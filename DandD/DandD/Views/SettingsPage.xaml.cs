@@ -13,6 +13,7 @@ namespace DandD.Views
     public partial class SettingsPage : ContentPage
     {
         Label label;
+        public static bool critical_hit_bool;
         public SettingsPage()
         {
             Label debuglabel = new Label
@@ -153,6 +154,7 @@ namespace DandD.Views
             void critical_hit_switcher_Toggled(object sender, ToggledEventArgs e)
             {
                 critical_hit_label.Text = String.Format("Critical Hits are on: {0}:", e.Value);
+                critical_hit_bool = e.Value;
             };
 
 
