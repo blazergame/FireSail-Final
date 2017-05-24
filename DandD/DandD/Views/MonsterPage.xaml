@@ -12,7 +12,7 @@
             <ListView x:Name="MonsterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemSelected="Monster_MonsterSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
+                    <ImageCell ImageSource="{Binding Image}" Detail="{Binding concat}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

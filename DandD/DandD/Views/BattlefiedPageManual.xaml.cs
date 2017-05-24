@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DandD.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -105,7 +105,7 @@ namespace DandD.Views
                 if (m1.Health > 0)
                 {
                     System.Diagnostics.Debug.WriteLine("Only attacks if monster is alive");
-                    damageList = ge.battlefield.attack(ref m1, ref c1);
+                    damageList = await ge.battlefield.attack( m1,  c1);
                 }
 
                 healthMonster = damageList[0];
@@ -290,6 +290,9 @@ namespace DandD.Views
                         for (int i = 0; i < items.Count; i++)
                         {
                             System.Diagnostics.Debug.WriteLine("Inside second loop");
+
+                            c[j].equippedItem(items[i]);
+
                             if (items[i].Dex > 0)
                                 c[j].Dex += items[i].Dex;
 
@@ -308,6 +311,11 @@ namespace DandD.Views
             }
             var listOfItem = App.Database.RetrieveItems();
             System.Diagnostics.Debug.WriteLine(listOfItem);
+        }
+
+        async void dropItem()
+        {
+            
         }
     }
 }

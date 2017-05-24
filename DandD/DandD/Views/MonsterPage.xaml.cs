@@ -13,7 +13,9 @@ namespace DandD.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MonsterPage : ContentPage
 	{
+        private int count = 0;
         private Random rand = new Random();
+        private Random r = new Random();
         public MonsterPage ()
 		{
             this.Title = "Monster List";
@@ -39,6 +41,7 @@ namespace DandD.Views
         async void AddMonster_Clicked(object sender, System.EventArgs e)
         {
             Monster m = new Monster();
+
             m.Name = PopulateAndReturnNames();
             System.Threading.Thread.Sleep(10);
             m.Str = Randomize();
@@ -50,9 +53,12 @@ namespace DandD.Views
             m.Health = 100;
             m.Level = 1;
             m.Xp = Randomize();
+            System.Threading.Thread.Sleep(10);
+            m.Image = GetRandomImage();
 
-            //Uncomment if you want to add another monster into db
-            await App.Database.InsertMonster(m);
+
+			//Uncomment if you want to add another monster into db
+			await App.Database.InsertMonster(m);
             await Navigation.PushAsync(new MonsterPage());
             await Navigation.PopAsync();
         }
@@ -64,6 +70,11 @@ namespace DandD.Views
             }
         }
 
+        private int Random1TO4()
+        {
+            Random r = new Random();
+            return r.Next(1, 4);
+        }
 
 		private int Randomize()
 		{
@@ -78,5 +89,21 @@ namespace DandD.Views
             "Fur Rat", "Barrack Yo-Momma The 3rd", "Carl","Slime" };
             return words[rand.Next(0, words.Length)];
 		}
+
+        private string GetRandomImage()
+        {
+           
+            var images = new[] { "http://i.imgur.com/5oy8rWy.png", "http://i.imgur.com/23o2LKv.png", "http://i.imgur.com/zJ0Y8oa.png", "http://i.imgur.com/GghhfF7.png" };
+            if (count < images.Count())
+            {
+                count++;
+                return images[count - 1];
+            }
+            else
+            {
+                count = 0;
+                return images[count];
+            }
+        }
     }
 }

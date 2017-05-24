@@ -10,6 +10,7 @@ namespace DandD.Models.Game_Files
         [PrimaryKey, AutoIncrement]
         public int Character_ID { get; set; }
         public int score { get; set; }
+        public string Image { get; set; }
        
        
         public Character(string Name)

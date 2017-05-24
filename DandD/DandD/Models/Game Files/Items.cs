@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -56,10 +56,12 @@ namespace DandD.Models.Game_Files
             set { SetProperty(ref val, value); }
         }
 
-        public string concat { get { return Attribute + ": " + Value; } }
+		public string concat { get { return "Name: " + Name + " Description: " + Description + " Tier: " + Tier + " BodyPart: " + BodyPart + "AttribMod:" + AttribMod + "Creator: " + Creator + "Image:" + Image + "Usage:" + Usage; } }
 
 
-        public Items(string Name, int Str, int Dex, int Speed)
+
+
+		public Items(string Name, int Str, int Dex, int Speed)
         {
             this.Name = Name;
             this.Str = Str;

@@ -18,7 +18,7 @@ namespace DandD.Models.Game_Files
         int level = 1;
         int damageReceived;
         string dmgHolder;
-        List<Items> EquippedList;
+       public List<Items> EquippedList;
         Random rand = new Random();
         int highScore;
 
