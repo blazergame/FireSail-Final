@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DandD.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -308,6 +308,11 @@ namespace DandD.Views
             }
             var listOfItem = App.Database.RetrieveItems();
             System.Diagnostics.Debug.WriteLine(listOfItem);
+        }
+
+        async void dropItem()
+        {
+            
         }
     }
 }

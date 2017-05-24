@@ -8,24 +8,18 @@
     <vm:AboutViewModel />
   </ContentPage.BindingContext>
   <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-      <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-        <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-          <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64"/>
-        </ContentView>
-      </StackLayout>
-    </StackLayout>
-
-    <ScrollView Grid.Row="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+      
+        <ScrollView Grid.Row="1">
         <StackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="CPSC - 4910 - SQ"/>
-                <Label Text="Student - Dhruv Seth" />
+                <Image Source="http://i.imgur.com/EhMSDJm.jpg" />
+                <Label Text="CPSC - 4910 - SQ"/>
+                <Label Text="Students - Jia Hui Li, Chris Trent, Dhruv Seth" />
                 <Label Text="Date/Time - 5/18, 10pm" />
-            <Label Text="Code Review - Chris Trent" />
+            <Label Text="Code Review - Crystal Nguyen" />
         </StackLayout>
     </ScrollView>
     </Grid>
