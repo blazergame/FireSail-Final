@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using DandD.Views;
+using System.Threading.Tasks;
 
 namespace DandD.Services
 {
@@ -11,29 +12,40 @@ namespace DandD.Services
 
         private Random rand = new Random();
 
-        public List<int> attack(ref Monster m1, ref Character c1)
+        public async Task<List<int>> attack( Monster m1,  Character c1)
         {
-           List<int> Dmgholder = new List<int>();
+           
+            List<int> Dmgholder = new List<int>();
             int first = compareSpeed(m1, c1);
 
             //Monster goes first
             if (first == 1)
             {
+                for (int i = 0; i < m1.EquippedList.Count; i++)
+                {
+                   m1.EquippedList[i].Usage--;
+                }
                 int localDmg = damageCharacter(ref m1,  ref c1);
                 int localDmg2 = damageMonster(ref m1, ref c1);
                 Dmgholder.Add(localDmg);
                 Dmgholder.Add(localDmg2);
 
+                await App.Database.UpdateMonster(m1);
                return Dmgholder;
 
             }
             else
             {
                 //Character goes first
+                for (int i = 0; i < c1.EquippedList.Count; i++)
+                {
+                    c1.EquippedList[i].Usage--;
+                }
                 int localDmg = damageMonster(ref m1, ref c1);
                 int localDmg2 = damageCharacter(ref m1, ref c1);
                 Dmgholder.Add(localDmg2);
                 Dmgholder.Add(localDmg);
+                await App.Database.UpdateCharacter(c1);
                 return Dmgholder;
             }
 

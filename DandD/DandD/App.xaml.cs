@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using DandD.Views;
-
+using DandD;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

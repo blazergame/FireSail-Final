@@ -101,7 +101,7 @@ namespace DandD.Views
 
                 //[0] holds monster's damage to character
                 //[1] holds character's damage to monster
-                damageList = ge.battlefield.attack(ref m1, ref c1);
+                damageList = await ge.battlefield.attack( m1,  c1);
                 healthMonster = damageList[0];
                 characterHealth = damageList[1];
 
