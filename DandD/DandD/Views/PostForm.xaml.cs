@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using DandD.Models.GameFiles;
 
 namespace DandD.Views
 {
@@ -47,7 +48,7 @@ namespace DandD.Views
 
             var json = response.Content.ReadAsStringAsync().Result;
 
-            dynamic results = JsonConvert.DeserializeObject<dynamic>(json);
+            RootObject results = JsonConvert.DeserializeObject<RootObject>(json);
 
 
             var temp = string.Empty;
@@ -55,14 +56,16 @@ namespace DandD.Views
             {
                 
                 Items api = new Items();
+               
                 api.Name = results.data[i].Name;
-                api.FilePath = results.data[i].FilePath;
-                api.Attribute = results.data[i].Attribute;
-                api.Value = results.data[i].Value;
-                api.Description = results[i].Description;
-                api.BodyPart = results[i].BodyPart;
-                api.Useage = results[i].Useage.ToInt32();
-                api.Creator = results[i].Creator;
+				api.Description = results.data[i].Description;
+                api.Tier = results.data[i].Tier;
+				api.BodyPart = results.data[i].BodyPart;
+                api.AttribMod = results.data[i].AttribMod;
+				api.Creator = results.data[i].Creator;
+				api.Image = results.data[i].Image;
+                api.Usage = results.data[i].Usage;
+               
 
                 await App.Database.InsertItem(api);
             }
