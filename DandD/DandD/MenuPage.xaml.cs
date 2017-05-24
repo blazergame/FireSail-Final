@@ -58,7 +58,7 @@ namespace DandD
         }
         async void BattleEffect_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new BattleEffect());
+            await Navigation.PushAsync(new BattlefieldEffectsOptions());
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DandD.Models.Game_Files;
 using DandD.Models;
 using DandD.Views;
+using DandD.Models.GameFiles;
 
 namespace DandD
 {
@@ -19,6 +20,7 @@ namespace DandD
             database.CreateTableAsync<Items>().Wait();
             database.CreateTableAsync<Character>().Wait();
             database.CreateTableAsync<Monster>().Wait();
+            database.CreateTableAsync<BattleEffect>().Wait();
         }
 
         public Task<List<Items>> RetrieveItems()
@@ -107,30 +109,33 @@ namespace DandD
         {
             database.ExecuteAsync("DELETE FROM Character");
         }
+
+        public void resetBattleEffect()
+        {
+            database.ExecuteAsync("DELETE FROM BattleEffect");
+        }
 		//*****************************************EFFECTS TABLES*************************************************
 
-		//public Task<List<BattleEffect>> RetrieveBattleEffects()
-		//{
-		//	return database.Table<BattleEffect>ToListAsync();
-		//}
+		public Task<List<BattleEffect>> RetrieveBattleEffects()
+		{
+			return database.Table<BattleEffect>().ToListAsync();
+		}
 
-  //      public Task<int> InsertBattleEffect(BattleEffect character)
-		//{
-		//	if (character.Monster_ID != 0) //Updating Item
-		//		return database.UpdateAsync(character);
-		//	return database.InsertAsync(character);
-		//}
+        public Task<int> InsertBattleEffect(BattleEffect character)
+        {
+            if (character.BattleEffect_Id != 0) //Updating Item
+                return database.UpdateAsync(character);
+            return database.InsertAsync(character);
+        }
 
-		//public Task<int> deleteMonster(Monster character)
-		//{
-		//	return database.DeleteAsync(character);
-		//}
+        public Task<int> deleteBattleEffect(BattleEffect character)
+		{
+		    return database.DeleteAsync(character);
+		}
 
-		//public Task<int> UpdateMonster(Monster monster)
-		//{
-		//	return database.UpdateAsync(monster);
-		//}
-
-
+        public Task<int> UpdateBattleEffect(BattleEffect monster)
+		{
+			return database.UpdateAsync(monster);
+		}
 	}
 }
