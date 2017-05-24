@@ -7,12 +7,10 @@
     <ContentPage.Content>
         <StackLayout>
             <Button x:Name="reset" Text="Reset" />
-      
-        
         <ListView x:Name="CharacterListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemSelected="Character_CharacterSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Level, StringFormat='Level {0}'}"/>
+                    <ImageCell ImageSource="{Binding Image}" Text="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

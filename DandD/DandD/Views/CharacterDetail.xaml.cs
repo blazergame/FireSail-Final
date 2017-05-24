@@ -13,17 +13,16 @@ namespace DandD.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CharacterDetail : ContentPage
 	{
+        
 		public CharacterDetail ()
 		{
 			InitializeComponent ();
             this.Title = "Character Details";
-
-
         }
 
         async void Add_Clicked(object sender, System.EventArgs e)
         {
-            var Char = (Character)BindingContext;
+            Character Char = (Character)BindingContext;
             await App.Database.InsertCharacter(Char);
             await Navigation.PopAsync();
         }
@@ -34,7 +33,6 @@ namespace DandD.Views
             await App.Database.deleteCharacter(Char);
             await Navigation.PopAsync();
         }
-
     }
 }
 

@@ -1,4 +1,4 @@
-﻿using DandD.Models.Game_Files;
+﻿﻿using DandD.Models.Game_Files;
 using DandD.Models.GameFiles;
 using System;
 using System.Collections.Generic;
@@ -14,6 +14,7 @@ namespace DandD.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CharacterPage : ContentPage
 	{
+       
         Random rand = new Random(); 
 		public CharacterPage ()
 		{
@@ -30,6 +31,8 @@ namespace DandD.Views
             createCharacter.Speed = Randomize();
             createCharacter.Health = 100;
             createCharacter.Level = 1;
+            System.Threading.Thread.Sleep(10);
+            createCharacter.Image = GetRandomImage();
 
             await App.Database.InsertCharacter(createCharacter);
             await Navigation.PopAsync();
@@ -46,6 +49,12 @@ namespace DandD.Views
 			return rand.Next(5, 12);
 		}
 
+        private int KindaRandom()
+        {
+            Random r = new Random();
+            return r.Next(1, 4);
+        }
+
 		private string PopulateAndReturnNames()
 		{
 
@@ -53,5 +62,12 @@ namespace DandD.Views
 			"Father Sunborg", "Mitt Romney", "Barrack Yo-Momma The 3rd", "Carl", "O_O", "THE_MARINERS_SUCK_AT_BASEBALL" };
 			return words[rand.Next(0, words.Length)];
 		}
+
+		private string GetRandomImage()
+		{
+			var images = new[] { "http://i.imgur.com/kqeaHWz.png", "http://i.imgur.com/Z1gL8ah.png", "http://i.imgur.com/wwGE7sm.png", "http://i.imgur.com/tlKCp8a.png" };
+			return images[rand.Next(0, images.Length)];
+		}
+
     }
 }
