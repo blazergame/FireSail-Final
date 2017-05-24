@@ -1,4 +1,6 @@
-﻿using DandD.Views;
+﻿using System;
+using System.Threading.Tasks;
+using DandD.Views;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,7 +16,7 @@ namespace DandD
 		{
 			InitializeComponent();
 
-			SetMainPage();
+			SetMainPageAsync();
 		}
 
         public static ItemDatabase Database
@@ -30,8 +32,10 @@ namespace DandD
 
         }
 
-        public static void SetMainPage()
-		{
+        public static async void SetMainPageAsync()
+        {
+            Current.MainPage = new SplashPage();
+            await Task.Delay(TimeSpan.FromSeconds(3));
             Current.MainPage = new TabbedPage
             {
                 Children =
@@ -69,5 +73,5 @@ namespace DandD
                 }
             };
         }
-	}
+    }
 }

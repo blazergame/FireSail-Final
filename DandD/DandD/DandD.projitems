@@ -25,6 +25,9 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AttackView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SplashPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -103,6 +106,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)IFileUtility.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Game Files\Datum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SplashPage.xaml.cs">
+      <DependentUpon>SplashPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

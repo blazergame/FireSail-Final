@@ -56,7 +56,7 @@ namespace DandD.Models.Game_Files
             set { SetProperty(ref val, value); }
         }
 
-		public string concat { get { return "Name: " + Name + "Description: " + Description + " Tier: " + Tier + " BodyPart: " + BodyPart + "AttribMod:" + AttribMod + "Creator: " + Creator + "Image:" + Image + "Usage:" + Usage; } }
+		public string concat { get { return "Name: " + Name + " Description: " + Description + " Tier: " + Tier + " BodyPart: " + BodyPart + "AttribMod:" + AttribMod + "Creator: " + Creator + "Image:" + Image + "Usage:" + Usage; } }
 
 
 
