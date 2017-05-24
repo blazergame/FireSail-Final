@@ -23,6 +23,17 @@ namespace DandD.Views
             return damageView = c1.Name + " Attacked " + m1.Name + " for " + val + " damage" ;
 
         }
+
+        public string Concat2(Monster m1, Character c1, int val)
+        {
+            return damageView = m1.Name + " Critically Attacked " + c1.Name + " for " + val + " damage";
+        }
+
+        public string Concat2(Character c1, Monster m1, int val)
+        {
+            return damageView = c1.Name + " Critically Attacked " + m1.Name + " for " + val + " damage";
+
+        }
     }
 }
 

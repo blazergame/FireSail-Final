@@ -109,8 +109,8 @@ namespace DandD.Views
                 c1.DamangeReceived = damageList[1];
 
 
-                m1.DmgHolder = display.Concat(m1,c1, damageList[0]);
-                c1.DmgHolder = display.Concat(c1, m1, damageList[1]);
+               // m1.DmgHolder = display.Concat(m1,c1, damageList[0]);
+               // c1.DmgHolder = display.Concat(c1, m1, damageList[1]);
 				
 
                 healths.Add(healthMonster);
