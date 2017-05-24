@@ -47,6 +47,7 @@ namespace DandD.Services
                         c1.EquippedList[i].Usage--;
                     }
                 }
+
                 int localDmg = damageMonster(ref m1, ref c1);
                 int localDmg2 = damageCharacter(ref m1, ref c1);
                 Dmgholder.Add(localDmg2);
@@ -89,13 +90,27 @@ namespace DandD.Services
             if (critical_hit_bool)
             {
                 damage = 2 * (c1.Str * rand.Next(1, 5));
+
+                if (c1.EquippedList == null)
+                {
+                    damage = 2 + (c1.Str * rand.Next(1, 5));
+                    System.Diagnostics.Debug.WriteLine(c1.Name + "used fist fighting and dealt " + damage + " damage!");
+                }
                 m1.Health -= damage;
             }
 
             else
             {
+
                 damage = (c1.Str * rand.Next(1, 5));
+
+                if (c1.EquippedList == null)
+                {
+                    damage = 2 + (c1.Str * rand.Next(1, 5));
+                    System.Diagnostics.Debug.WriteLine(c1.Name + "used fist fighting and dealt " + damage + " damage!");
+                }
                 m1.Health -= damage;
+
             }
             return damage;
         }
