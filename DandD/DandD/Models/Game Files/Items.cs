@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +6,10 @@ namespace DandD.Models.Game_Files
 {
     public class Items: BaseDataObject
     {
-        public IFileUtility Picture { get; set; }
+        public string FilePath { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Bodyparty { get; set; }
+        public string BodyPart { get; set; }
         public int Useage { get; set; }
         public string Creator { get; set; }
         public int Str { get; set; }
